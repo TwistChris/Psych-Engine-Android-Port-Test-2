@@ -2305,8 +2305,8 @@ class PlayState extends MusicBeatState
 						}
 
                                                 if(daNote.noteType == 'DAD Sing') {
-							daddy.playAnim(animToPlay + altAnim, true);
-							daddy.holdTimer = 0;
+							dad2.playAnim(animToPlay + altAnim, true);
+							dad2.holdTimer = 0;
 						} else {
 							dad.playAnim(animToPlay + altAnim, true);
 							dad.holdTimer = 0;
