@@ -739,7 +739,7 @@ class PlayState extends MusicBeatState
 		startCharacterPos(dad, true);
 		dadGroup.add(dad);
 
-                dad2 = new Character(180, -10, 'dad');
+                dad2 = new Character(280, 90, 'matt-final');
                 startCharacterPos(dad2);
                 dad2Group.add(dad2);
 		
