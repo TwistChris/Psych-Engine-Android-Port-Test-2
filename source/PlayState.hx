@@ -3812,9 +3812,9 @@ class PlayState extends MusicBeatState
                 if (songName == 'final-destination')
 			if(curBeat % 2 == 0)
 				{
-				if (rubydad.animation.curAnim.name != null && !rubydad.animation.curAnim.name.startsWith("sing") && !rubydad.stunned)
+				if (dad2.animation.curAnim.name != null && !dad2.animation.curAnim.name.startsWith("sing") && !dad2.stunned)
 						{
-							rubydad.dance();
+							dad2.dance();
 						}
                                 }
 
