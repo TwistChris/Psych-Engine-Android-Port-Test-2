@@ -111,15 +111,12 @@ class PlayState extends MusicBeatState
 	public var DAD_Y:Float = 100;
 	public var GF_X:Float = 400;
 	public var GF_Y:Float = 130;
-        public var DAD2_X:Float = 100;
-	public var DAD2_Y:Float = 100;
-	
+
 	public static var songSpeed:Float = 0;
 	
 	public var boyfriendGroup:FlxSpriteGroup;
 	public var dadGroup:FlxSpriteGroup;
 	public var gfGroup:FlxSpriteGroup;
-        public var dad2Group:FlxSpriteGroup;
 
 	public static var curStage:String = '';
 	public static var isPixelStage:Bool = false;
@@ -130,6 +127,11 @@ class PlayState extends MusicBeatState
 	public static var storyDifficulty:Int = 1;
 
         public static var bfsel:Int = 0;
+
+        var bfcansing:Bool = true;
+	var dadcansing:Bool = true;
+	var gfcansing:Bool = false;
+	var dad2cansing:Bool = false;
 
 	public var vocals:FlxSound;
 
@@ -367,13 +369,10 @@ class PlayState extends MusicBeatState
 		GF_Y = stageData.girlfriend[1];
 		DAD_X = stageData.opponent[0];
 		DAD_Y = stageData.opponent[1];
-                DAD2_X = stageData.opponent[0];
-		DAD2_Y = stageData.opponent[1];
 
 		boyfriendGroup = new FlxSpriteGroup(BF_X, BF_Y);
 		dadGroup = new FlxSpriteGroup(DAD_X, DAD_Y);
 		gfGroup = new FlxSpriteGroup(GF_X, GF_Y);
-                dad2Group = new FlxSpriteGroup(DAD2_X, DAD2_Y);
 
 		switch (curStage)
 		{
@@ -661,7 +660,6 @@ class PlayState extends MusicBeatState
 			add(limo);
 
 		add(dadGroup);
-                add(dad2Group);
 		add(boyfriendGroup);
 		
 		if(curStage == 'spooky') {
@@ -739,9 +737,11 @@ class PlayState extends MusicBeatState
 		startCharacterPos(dad, true);
 		dadGroup.add(dad);
 
-                dad2 = new Character(280, 90, 'matt-final');
-                startCharacterPos(dad2);
-                dad2Group.add(dad2);
+                if (songName == 'final-destination')
+			{
+				dad2 = new Character(280, 90, 'matt-final');
+				dadGroup.add(dad2);
+			}
 		
 		var camPos:FlxPoint = new FlxPoint(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 		camPos.x += gf.cameraPosition[0];
