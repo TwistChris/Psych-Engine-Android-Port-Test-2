@@ -3809,7 +3809,14 @@ class PlayState extends MusicBeatState
 	{
 		super.beatHit();
 
-                if (SongName == 'final-destination')
+                if (songName == 'final-destination')
+			if(curBeat % 2 == 0)
+				{
+				if (rubydad.animation.curAnim.name != null && !rubydad.animation.curAnim.name.startsWith("sing") && !rubydad.stunned)
+						{
+							rubydad.dance();
+						}
+                                }
 
 		if(lastBeatHit >= curBeat) {
 			trace('BEAT HIT: ' + curBeat + ', LAST HIT: ' + lastBeatHit);
@@ -3862,10 +3869,6 @@ class PlayState extends MusicBeatState
 			if (boyfriend.animation.curAnim.name != null && !boyfriend.animation.curAnim.name.startsWith("sing"))
 			{
 				boyfriend.dance();
-			}
-                        if (dad2.animation.curAnim.name != null && !dad2.animation.curAnim.name.startsWith("sing") && !dad2.stunned)
-			{
-				dad2.dance();
 			}
 			if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing") && !dad.stunned)
 			{
