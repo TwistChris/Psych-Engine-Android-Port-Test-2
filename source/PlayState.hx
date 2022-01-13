@@ -111,7 +111,7 @@ class PlayState extends MusicBeatState
 	public var DAD_Y:Float = 100;
 	public var GF_X:Float = 400;
 	public var GF_Y:Float = 130;
-
+	
 	public static var songSpeed:Float = 0;
 	
 	public var boyfriendGroup:FlxSpriteGroup;
@@ -126,19 +126,11 @@ class PlayState extends MusicBeatState
 	public static var storyPlaylist:Array<String> = [];
 	public static var storyDifficulty:Int = 1;
 
-        public static var bfsel:Int = 0;
-
-        var bfcansing:Bool = true;
-	var dadcansing:Bool = true;
-	var gfcansing:Bool = false;
-	var dad2cansing:Bool = false;
-
 	public var vocals:FlxSound;
 
 	public var dad:Character;
 	public var gf:Character;
 	public var boyfriend:Boyfriend;
-        public var dad2:Character;
 
 	public var notes:FlxTypedGroup<Note>;
 	public var unspawnNotes:Array<Note> = [];
@@ -737,11 +729,9 @@ class PlayState extends MusicBeatState
 		startCharacterPos(dad, true);
 		dadGroup.add(dad);
 
-                if (songName == 'final-destination')
-			{
-				dad2 = new Character(280, 90, 'matt-final');
-				dadGroup.add(dad2);
-			}
+		boyfriend = new Boyfriend(0, 0, SONG.player1);
+		startCharacterPos(boyfriend);
+		boyfriendGroup.add(boyfriend);
 		
 		var camPos:FlxPoint = new FlxPoint(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 		camPos.x += gf.cameraPosition[0];
@@ -750,33 +740,6 @@ class PlayState extends MusicBeatState
 		if(dad.curCharacter.startsWith('gf')) {
 			dad.setPosition(GF_X, GF_Y);
 			gf.visible = false;
-		}
-
-                if(boyfriend.curCharacter.startsWith('bf')) {
-			dad2.visible = false;
-                }
-
-                switch bfsel{
-			case 0:
-				boyfriend = new Boyfriend(0, 0, SONG.player1);
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-				trace("beta!");
-			case 1:
-				boyfriend = new Boyfriend(0, 0, 'blue');
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-				trace("blue!");
-			case 2:
-				boyfriend = new Boyfriend(0, 0, 'mean');
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-				trace("mean!");
-			default:
-				trace("default!");
-				boyfriend = new Boyfriend(0, 0, SONG.player1);
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
 		}
 
 		switch(curStage)
@@ -1335,10 +1298,6 @@ class PlayState extends MusicBeatState
 					if (boyfriend.animation.curAnim != null && !boyfriend.animation.curAnim.name.startsWith('sing'))
 					{
 						boyfriend.dance();
-					}
-                                        if (dad2.animation.curAnim != null && !dad2.animation.curAnim.name.startsWith('sing'))
-					{
-						dad2.dance();
 					}
 					if (dad.animation.curAnim != null && !dad.animation.curAnim.name.startsWith('sing') && !dad.stunned)
 					{
@@ -2295,7 +2254,6 @@ class PlayState extends MusicBeatState
 							case 3:
 								animToPlay = 'singRIGHT';
 						}
-
 						if(daNote.noteType == 'GF Sing') {
 							gf.playAnim(animToPlay + altAnim, true);
 							gf.holdTimer = 0;
@@ -2303,14 +2261,6 @@ class PlayState extends MusicBeatState
 							dad.playAnim(animToPlay + altAnim, true);
 							dad.holdTimer = 0;
 						}
-
-                                                if(daNote.noteType == 'DAD Sing') {
-							dad2.playAnim(animToPlay + altAnim, true);
-							dad2.holdTimer = 0;
-						} else {
-							dad.playAnim(animToPlay + altAnim, true);
-							dad.holdTimer = 0;
-                                                }
 					}
 
 					if (SONG.needsVoices)
@@ -3875,10 +3825,6 @@ class PlayState extends MusicBeatState
 			if (boyfriend.animation.curAnim.name != null && !boyfriend.animation.curAnim.name.startsWith("sing"))
 			{
 				boyfriend.dance();
-			}
-                        if (dad2.animation.curAnim.name != null && !dad2.animation.curAnim.name.startsWith("sing"))
-			{
-				dad2.dance();
 			}
 			if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing") && !dad.stunned)
 			{
