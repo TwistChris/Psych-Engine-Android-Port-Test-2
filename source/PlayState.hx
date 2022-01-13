@@ -3809,14 +3809,13 @@ class PlayState extends MusicBeatState
 	{
 		super.beatHit();
 
-                if (songName == 'final-destination')
-			if(curBeat % 2 == 0)
-	                {
-				if (dad2.animation.curAnim.name != null && !dad2.animation.curAnim.name.startsWith("sing") && !dad2.stunned)
-				{
-				        dad2.dance();
-				}
-                        }
+		if(curBeat % 2 == 0) {
+		      if (dad2.animation.curAnim.name != null && !dad2.animation.curAnim.name.startsWith("sing") && !dad2.stunned)
+	              {
+			      dad2.dance();
+		      }
+                
+                }
 
 		if(lastBeatHit >= curBeat) {
 			trace('BEAT HIT: ' + curBeat + ', LAST HIT: ' + lastBeatHit);
