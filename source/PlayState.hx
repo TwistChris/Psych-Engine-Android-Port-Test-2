@@ -734,7 +734,7 @@ class PlayState extends MusicBeatState
 
 		if (songName == 'final-destination')
 			{
-				dad2 = new Character(280, 410, 'matt-final');
+				dad2 = new Character(280, 90, 'matt-final');
 				dadGroup.add(dad2);
 			}
 		
@@ -1327,18 +1327,21 @@ class PlayState extends MusicBeatState
 					{
 						boyfriend.dance();
 					}
-                                        if (dad2.animation.curAnim != null && !dad2.animation.curAnim.name.startsWith('sing') && !dad2.stunned)
-					{
-						dad2.dance();
-					}
 					if (dad.animation.curAnim != null && !dad.animation.curAnim.name.startsWith('sing') && !dad.stunned)
 					{
 						dad.dance();
 					}
+                                        if (dad2 != null)
+						if (dad2.animation.curAnim != null && !dad2.animation.curAnim.name.startsWith('sing') && !dad2.stunned)
+							{
+								dad2.dance();
+							}
 				}
 				else if(dad.danceIdle && dad.animation.curAnim != null && !dad.stunned && !dad.curCharacter.startsWith('gf') && !dad.animation.curAnim.name.startsWith("sing"))
 				{
 					dad.dance();
+                                        if (dad2 != null)
+					dad2.dance();
 				}
 
 				var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
@@ -3805,6 +3808,8 @@ class PlayState extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
+
+                if (SongName == 'final-destination')
 
 		if(lastBeatHit >= curBeat) {
 			trace('BEAT HIT: ' + curBeat + ', LAST HIT: ' + lastBeatHit);
