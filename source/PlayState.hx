@@ -734,7 +734,7 @@ class PlayState extends MusicBeatState
 
 		if (songName == 'final-destination')
 			{
-				dad2 = new Character(0, 0, 'matt-final');
+				dad2 = new Character(280, 410, 'matt-final');
 				dadGroup.add(dad2);
 			}
 		
@@ -1326,6 +1326,10 @@ class PlayState extends MusicBeatState
 					if (boyfriend.animation.curAnim != null && !boyfriend.animation.curAnim.name.startsWith('sing'))
 					{
 						boyfriend.dance();
+					}
+                                        if (dad2.animation.curAnim != null && !dad2.animation.curAnim.name.startsWith('sing') && !dad2.stunned)
+					{
+						dad2.dance();
 					}
 					if (dad.animation.curAnim != null && !dad.animation.curAnim.name.startsWith('sing') && !dad.stunned)
 					{
@@ -3853,6 +3857,10 @@ class PlayState extends MusicBeatState
 			if (boyfriend.animation.curAnim.name != null && !boyfriend.animation.curAnim.name.startsWith("sing"))
 			{
 				boyfriend.dance();
+			}
+                        if (dad2.animation.curAnim.name != null && !dad2.animation.curAnim.name.startsWith("sing") && !dad2.stunned)
+			{
+				dad2.dance();
 			}
 			if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing") && !dad.stunned)
 			{
