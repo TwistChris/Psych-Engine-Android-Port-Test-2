@@ -734,7 +734,7 @@ class PlayState extends MusicBeatState
 
 		if (songName == 'final-destination')
 			{
-				dad2 = new Character(-180, 220, 'matt-final');
+				dad2 = new Character(-80, 420, 'matt-final');
 				dadGroup.add(dad2);
 			}
 		
@@ -3810,13 +3810,11 @@ class PlayState extends MusicBeatState
 		super.beatHit();
   
                 if (curSong == 'final-destination')
-		        if(curBeat % 2 == 0)
-                {
+		        if(curBeat % 2 == 0) {
 		                if (dad2.animation.curAnim.name != null && !dad2.animation.curAnim.name.startsWith("sing") && !dad2.stunned)
 	                        {
-			                 dad2.dance();
+			                        dad2.dance();
 		                }
-                
                 }
 
 		if(lastBeatHit >= curBeat) {
