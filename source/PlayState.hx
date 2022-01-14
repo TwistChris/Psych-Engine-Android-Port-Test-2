@@ -3810,7 +3810,7 @@ class PlayState extends MusicBeatState
 		super.beatHit();
   
                 if (curSong == 'final-destination')
-		        if(curBeat % 2 == 0) {
+		        if(curBeat % 1 == 0) {
 		                if (dad2.animation.curAnim.name != null && !dad2.animation.curAnim.name.startsWith("sing") && !dad2.stunned)
 	                        {
 			                        dad2.dance();
