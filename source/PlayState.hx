@@ -734,7 +734,7 @@ class PlayState extends MusicBeatState
 
 		if (songName == 'final-destination')
 			{
-				dad2 = new Character(1500, 420, 'matt-final');
+				dad2 = new Character(110, 230, 'matt-final');
 				dadGroup.add(dad2);
 			}
 		
