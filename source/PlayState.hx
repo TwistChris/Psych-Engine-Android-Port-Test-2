@@ -2494,7 +2494,7 @@ class PlayState extends MusicBeatState
 								animToPlay = 'singRIGHT';
 						}
 						if(daNote.noteType == 'GF Sing') {
-							gf.playAnim(animToPlay + altAnim + dad.altname, true);
+							gf.playAnim(animToPlay + altAnim, true);
 							gf.holdTimer = 0;
 						} else {
 							if ((dadspecialanim.contains(dad.animation.curAnim.name) && dad.animation.curAnim.finished)
