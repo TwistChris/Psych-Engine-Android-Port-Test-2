@@ -2308,12 +2308,12 @@ class PlayState extends MusicBeatState
 						        {
 								if (dad2cansing)
 									{
-										dad2.playAnim(animToPlay + altAnim + dad.altname, true);
+										dad2.playAnim(animToPlay + altAnim, true);
 										dad2.holdTimer = 0;
 									}
 								if (dadcansing)
 									{
-										dad.playAnim(animToPlay + dad.altname, true);
+										dad.playAnim(animToPlay, true);
 										dad.holdTimer = 0;
 								        }
 							}
@@ -2502,7 +2502,7 @@ class PlayState extends MusicBeatState
 							{
 								if (dadcansing)
 									{
-										dad.playAnim(animToPlay + altAnim + dad.altname, true);
+										dad.playAnim(animToPlay + altAnim, true);
 										dad.holdTimer = 0;
 									}
 							}
@@ -3778,7 +3778,7 @@ class PlayState extends MusicBeatState
 					gf.holdTimer = 0;
 				} else {
 					if(gfcansing) {
-						gf.playAnim(animToPlay + daAlt+ dad.altname, true);
+						gf.playAnim(animToPlay + daAlt, true);
 						gf.holdTimer = 0;
 					}
 					if (bfcansing)
@@ -3786,7 +3786,7 @@ class PlayState extends MusicBeatState
 							if ((bfspecialanim.contains(boyfriend.animation.curAnim.name) && boyfriend.animation.curAnim.finished)
 								|| !bfspecialanim.contains(boyfriend.animation.curAnim.name))
 							{
-								boyfriend.playAnim(animToPlay + daAlt  + dad.altname, true);
+								boyfriend.playAnim(animToPlay + daAlt, true);
 								boyfriend.holdTimer = 0;
 							}
 						}
