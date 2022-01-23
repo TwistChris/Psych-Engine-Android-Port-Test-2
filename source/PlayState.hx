@@ -233,7 +233,6 @@ class PlayState extends MusicBeatState
 	public var scoreTxt:FlxText;
 	var timeTxt:FlxText;
 	var scoreTxtTween:FlxTween;
-
         var gfint:Int = 0;
 	var gfint2:Int = 0;
 	public static var campaignScore:Int = 0;
@@ -2366,6 +2365,7 @@ class PlayState extends MusicBeatState
 						daNote.visible = false;
 	
 						daNote.kill();
+                                                notes.remove(daNote, true);
 						daNote.destroy();
 					}
 				});
