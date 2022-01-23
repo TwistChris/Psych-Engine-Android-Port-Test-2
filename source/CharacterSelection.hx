@@ -22,7 +22,7 @@ class CharacterSelection extends MusicBeatState
 {
 
 
-    var bflist:Array<String> = ['BETA BOYFRIEND', 'BLUE BOYFRIEND', 'MEAN BOYFRIEND'];
+    var bflist:Array<String> = ['BOYFRIEND', 'BETA_BOYFRIEND', 'BLUE_BOYFRIEND', 'MEAN_BOYFRIEND'];
 
 	var curSelected:Int = 0;
 
@@ -70,17 +70,18 @@ class CharacterSelection extends MusicBeatState
 
 		// characters
 		characters = new FlxSprite(0, 0);
-
-		characters.frames = FlxAtlasFrames.fromSparrow('assets/preload/images/charSelect/selectbf.png', 'assets/preload/images/charSelect/selectbf.xml');
+		characters.frames = Paths.getSparrowAtlas('shared/images/characters' + bf list);
 		characters.antialiasing = true;
 		
-		characters.animation.addByPrefix('bluebf', 'bluebf instance', 24);
-		characters.animation.addByPrefix('meanbf', 'meanbf instance', 24);
-		characters.animation.addByPrefix('pissbf', 'pissbf instance', 24);
+                characters.animation.addByPrefix('BF idle', 'BF idle dance', 12);
+		characters.animation.addByPrefix('BF idle', 'BF idle dance', 12);
+		characters.animation.addByPrefix('BF idle', 'BF idle dance', 12);
+		characters.animation.addByPrefix('BF idle', 'BF idle dance', 12);
 
-		characters.animation.addByPrefix('bluebfselect', 'bluebfselect instance', 24);
-		characters.animation.addByPrefix('meanbfselect', 'meanbfselect instance', 24);
-		characters.animation.addByPrefix('pissbfselect', 'pissbfselect instance', 24);
+                characters.animation.addByPrefix('BF HEY', 'BF HEY!!!', 24);
+		characters.animation.addByPrefix('BF HEY', 'BF HEY!!!', 24);
+		characters.animation.addByPrefix('BF HEY', 'BF HEY!!!', 24);
+		characters.animation.addByPrefix('BF HEY', 'BF HEY!!!', 24);
 
 		
 		characters.updateHitbox();
@@ -141,13 +142,15 @@ class CharacterSelection extends MusicBeatState
 		if (controls.ACCEPT){
 			switch curSelected{
 				case 0:
-					characters.animation.play('pissbfselect');
+					characters.animation.play('BF HEY');
 				case 1:
-					characters.animation.play('bluebfselect');
+					characters.animation.play('BF HEY');
 				case 2:
-					characters.animation.play('meanbfselect');
+					characters.animation.play('BF HEY');
+                                case 3:
+					characters.animation.play('BF HEY');
 				default:
-					characters.animation.play('pissbfselect');
+					characters.animation.play('BF HEY');
 
 			}
 			
@@ -203,17 +206,20 @@ class CharacterSelection extends MusicBeatState
 
 			switch curSelected{
 				case 0:
-					characters.animation.play('pissbf');
-					BG.loadGraphic('assets/preload/images/charSelect/BG1.png');
-				case 1:
-					characters.animation.play('bluebf');
+					characters.animation.play('BF idle');
 					BG.loadGraphic('assets/preload/images/charSelect/BG2.png');
+                                case 1:
+					characters.animation.play('BF idle');
+					BG.loadGraphic('assets/preload/images/charSelect/BG1.png');
 				case 2:
-					characters.animation.play('meanbf');
+					characters.animation.play('BF idle');
+					BG.loadGraphic('assets/preload/images/charSelect/BG2.png');
+				case 3:
+					characters.animation.play('BF idle');
 					BG.loadGraphic('assets/preload/images/charSelect/BG3.png');
 				default:
-					characters.animation.play('pissbf');
-					BG.loadGraphic('assets/preload/images/charSelect/BG1.png');
+					characters.animation.play('BF idle');
+					BG.loadGraphic('assets/preload/images/charSelect/BG2.png');
 
 			}
 
