@@ -3,6 +3,8 @@ local xx = 520;
 local yy = 450;
 local xx2 = 820;
 local yy2 = 450;
+local xx3 = 820;
+local yy3 = 450;
 local ofs = 35;
 local followchars = true;
 local del = 0;
@@ -47,6 +49,23 @@ function onUpdate()
             end
             if getProperty('dad.animation.curAnim.name') == 'idle' then
                 triggerEvent('Camera Follow Pos',xx,yy)
+            end
+        else
+
+            if getProperty('boyfriend.animation.curAnim.name') == 'singLEFT' then
+                triggerEvent('Camera Follow Pos',xx3-ofs,yy3)
+            end
+            if getProperty('boyfriend.animation.curAnim.name') == 'singRIGHT' then
+                triggerEvent('Camera Follow Pos',xx3+ofs,yy3)
+            end
+            if getProperty('boyfriend.animation.curAnim.name') == 'singUP' then
+                triggerEvent('Camera Follow Pos',xx3,yy3-ofs)
+            end
+            if getProperty('boyfriend.animation.curAnim.name') == 'singDOWN' then
+                triggerEvent('Camera Follow Pos',xx3,yy3+ofs)
+            end
+	    if getProperty('boyfriend.animation.curAnim.name') == 'idle' then
+                triggerEvent('Camera Follow Pos',xx3,yy3)
             end
         else
 
