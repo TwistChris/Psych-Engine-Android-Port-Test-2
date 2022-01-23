@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="BOYFRIEND_2.png">
+<TextureAtlas imagePath="BOYFRIEND_BLUE.png">
 	<!-- Created with Adobe Animate version 18.0.1.115 -->
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="BF Dead Loop0000" x="4490" y="1878" width="439" height="435" pivotX="-35.7" pivotY="-992.05" frameX="0" frameY="0" frameWidth="439" frameHeight="445"/>
