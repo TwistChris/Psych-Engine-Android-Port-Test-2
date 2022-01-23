@@ -66,38 +66,18 @@ class CharacterSelection extends MusicBeatState
 
 		arrowsz_right = new FlxSprite(arrowsz_left.width, 0).loadGraphic('assets/preload/images/charSelect/arrowsz_right.png');
 
-
-
-		// characters
-		characters = new FlxSprite(0, 0);
-		characters.frames = Paths.getSparrowAtlas('shared/images/characters' + bflist[0]);
-		characters.antialiasing = true;
-		
-                characters.animation.addByPrefix('BF idle', 'BF idle dance', 12);
-		characters.animation.addByPrefix('BF idle', 'BF idle dance', 12);
-		characters.animation.addByPrefix('BF idle', 'BF idle dance', 12);
-		characters.animation.addByPrefix('BF idle', 'BF idle dance', 12);
-
-                characters.animation.addByPrefix('BF HEY', 'BF HEY!!!', 24);
-		characters.animation.addByPrefix('BF HEY', 'BF HEY!!!', 24);
-		characters.animation.addByPrefix('BF HEY', 'BF HEY!!!', 24);
-		characters.animation.addByPrefix('BF HEY', 'BF HEY!!!', 24);
-
-		
-		characters.updateHitbox();
-		
-		characters.setGraphicSize(Std.int(275));
-		
-		characters.x = (FlxG.width / 2) - (characters.width / 2);
-		characters.y = (FlxG.height / 2) - (characters.height / 2);
-
-
-
-
-
-
-
-
+                for (i in 0...bflist.length)
+		{
+			var characters = new FlxSprite(0, 0);
+			characters.frames = Paths.getSparrowAtlas('assets/shared/images/characters' + bflist[i]);
+			characters.animation.addByPrefix("idle", 'BF idle dance', 24, true);
+			characters.animation.addByPrefix("hey", 'BF HEY!!', 24, false);
+			characters.screenCenter(X);
+			characters.x += (500*i);
+			characters.animation.play("idle");
+			characters.antialiasing = true;
+			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
+		}
 		icon = new FlxSprite(0, 0).loadGraphic('assets/preload/images/charSelect/frame1.png');
 
 
