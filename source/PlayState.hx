@@ -762,11 +762,12 @@ class PlayState extends MusicBeatState
                                 startCharacterPos(boyfriend);
 		                boyfriendGroup.add(boyfriend);
 				trace("bf!");
-                        case 1:
-				boyfriend = new Boyfriend(0, 0, 'beta');                          startCharacterPos(boyfriend);
+			case 1:
+				boyfriend = new Boyfriend(0, 0, 'beta');
+                                startCharacterPos(boyfriend);
 		                boyfriendGroup.add(boyfriend);
 				trace("beta!");
-			case 2:
+                        case 2:
 				boyfriend = new Boyfriend(0, 0, 'blue');
                                 startCharacterPos(boyfriend);
 		                boyfriendGroup.add(boyfriend);
@@ -4131,8 +4132,15 @@ class PlayState extends MusicBeatState
 			{
 				dad.dance();
 			}
+                        if (dad2 != null)
+                                if (dad2.animation.curAnim.name != null && !dad2.animation.curAnim.name.startsWith("sing") && !dad2.stunned)
+			                {
+				                dad2.dance();
+			                }
 		} else if(dad.danceIdle && dad.animation.curAnim.name != null && !dad.curCharacter.startsWith('gf') && !dad.animation.curAnim.name.startsWith("sing") && !dad.stunned) {
 			dad.dance();
+                        if (dad2 != null)
+                        dad2.dance();
 		}
 
 		switch (curStage)
