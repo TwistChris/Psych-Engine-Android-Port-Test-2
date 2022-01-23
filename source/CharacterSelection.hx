@@ -70,7 +70,7 @@ class CharacterSelection extends MusicBeatState
 
 		// characters
 		characters = new FlxSprite(0, 0);
-		characters.frames = Paths.getSparrowAtlas('shared/images/characters' + bf list);
+		characters.frames = Paths.getSparrowAtlas('shared/images/characters' + bf list[0]);
 		characters.antialiasing = true;
 		
                 characters.animation.addByPrefix('BF idle', 'BF idle dance', 12);
