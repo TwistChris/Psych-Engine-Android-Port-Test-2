@@ -28,7 +28,6 @@ class CharacterSelection extends MusicBeatState
 {
     var menuItems:Array<String> = ['bf', 'bf-christmas', 'torch', 'bf-car'];
     var curSelected:Int = 0;
-    var daSelected:Int = menuItems[curSelected];
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
 	var shitCharacterBetter:Boyfriend;
@@ -158,7 +157,7 @@ class CharacterSelection extends MusicBeatState
 
             if (accepted)
                 {
-                    switch (daSelected){
+                    switch curSelected{
                     case "bf":
                         menuBG.loadGraphic('BG1');
                         menuBG.color = 0x87ceeb;
@@ -178,7 +177,7 @@ class CharacterSelection extends MusicBeatState
       
                     alreadySelected = true;
 
-                    PlayState.bfsel = daSelected;
+                    PlayState.bfsel = curSelected;
        
                     FlxFlicker.flicker(iconArray[curSelected], 0);
                     new FlxTimer().start(1, function(tmr:FlxTimer)
