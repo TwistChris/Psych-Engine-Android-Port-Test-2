@@ -158,8 +158,8 @@ class CharMenu extends MusicBeatState
 
             if (accepted)
                 {
-                    alreadySelected = true;
-                    
+                    var daSelected:String = menuItems[curSelected];
+       
                     switch (daSelected)
                 {
                     case "bf":
@@ -179,6 +179,8 @@ class CharMenu extends MusicBeatState
 				        menuBG.color = 0xFFFFFF;
                 }
 
+                    alreadySelected = true;
+   
                     PlayState.bfsel = daSelected;
        
                     FlxFlicker.flicker(iconArray[curSelected], 0);
