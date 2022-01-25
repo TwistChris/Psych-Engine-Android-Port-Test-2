@@ -178,6 +178,8 @@ class CharMenu extends MusicBeatState
 				        menuBG.color = 0xFFFFFF;
                 }
    
+                    var daSelected:String = menuItems[curSelected];
+
                     PlayState.bfsel = daSelected;
        
                     FlxFlicker.flicker(iconArray[curSelected], 0);
