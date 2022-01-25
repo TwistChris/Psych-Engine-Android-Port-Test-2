@@ -2317,7 +2317,7 @@ class PlayState extends MusicBeatState
 									}
 								if (dadcansing)
 									{
-										dad.playAnim(animToPlay, true);
+										dad.playAnim(animToPlay + altAnim, true);
 										dad.holdTimer = 0;
 								        }
 							}
