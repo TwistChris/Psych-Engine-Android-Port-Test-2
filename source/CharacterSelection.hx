@@ -88,7 +88,7 @@ class CharMenu extends MusicBeatState
 
         txtDescription = new FlxText(FlxG.width * 0.075, menuBG.y + 200, 0, "", 32);
         txtDescription.alignment = CENTER;
-        txtDescription.setFormat("assets/fonts/pdark.ttf", 32);
+        txtDescription.setFormat("assets/fonts/vcr.ttf", 32);
         txtDescription.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 1.5, 1);
         txtDescription.color = FlxColor.WHITE;
         add(txtDescription);
@@ -119,6 +119,10 @@ class CharMenu extends MusicBeatState
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+
+        #if mobileC
+        addVirtualPad(FULL, A_B);	
+        #end
 
         super.create();
     }
@@ -155,11 +159,28 @@ class CharMenu extends MusicBeatState
             if (accepted)
                 {
                     alreadySelected = true;
-                    var daSelected:String = menuItems[curSelected];
-                    PlayState.hasPlayedOnce = true;
-                    if (menuItems[curSelected] != 'bf')
-                        PlayState.SONG.player1 = daSelected;
+                    
+                    switch (daSelected)
+                {
+                    case "bf":
+                        menuBG.loadGraphic('BG1');
+                        menuBG.color = 0x87ceeb;
+                    case "bf-christmas":
+                        menuBG.loadGraphic('BG2');
+                        menuBG.color = 0xFFFFFF;
+                    case "torch":
+                        menuBG.loadGraphic('BG3');
+				        menuBG.color = 0xFF00FF;
+                    case "bf-car":
+                        menuBG.loadGraphic('BG1');
+				        menuBG.color = 0xFF00FF;
+                    default:
+                        menuBG.loadGraphic('BG4');
+				        menuBG.color = 0xFFFFFF;
+                }
 
+                    PlayState.bfsel = daSelected;
+       
                     FlxFlicker.flicker(iconArray[curSelected], 0);
                     new FlxTimer().start(1, function(tmr:FlxTimer)
                         {
