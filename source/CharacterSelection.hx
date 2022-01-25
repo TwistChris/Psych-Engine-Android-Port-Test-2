@@ -156,9 +156,8 @@ class CharMenu extends MusicBeatState
                 }
 
             if (accepted)
-                }
-                    switch (daSelected)
                 {
+                    switch (daSelected);
                     case "bf":
                         menuBG.loadGraphic('BG1');
                         menuBG.color = 0x87ceeb;
