@@ -78,7 +78,6 @@ class CharMenu extends MusicBeatState
             //songText.screenCenter(X);
             var icon:Boyfriend = new Boyfriend(0, 0, menuItems[i]);
 
-            icon.sprTracker = songText;
             icon.scale.set(0.8, 0.8);
 
             //Using a FlxGroup is too much fuss!
@@ -186,7 +185,7 @@ class CharMenu extends MusicBeatState
                     FlxFlicker.flicker(iconArray[curSelected], 0);
                     new FlxTimer().start(1, function(tmr:FlxTimer)
                         {
-                            LoadingState.loadAndSwitchState(new PlayState());
+                            FlxG.switchState(new MainMenuState());
                         });
                 }
             
