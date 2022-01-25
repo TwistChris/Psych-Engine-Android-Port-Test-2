@@ -158,11 +158,16 @@ class CharMenu extends MusicBeatState
 
             if (accepted){
                     switch (daSelected){
-                    case "bf"
-                    case "beta"
-                    case "blue"
-                    case "mean"
-                    default
+                    case "bf":
+                        menuBG.color = 0x87ceeb;
+                    case "beta":
+                        menuBG.color = 0x87ceeb;
+                    case "blue":
+                        menuBG.color = 0x87ceeb;
+                    case "mean":
+                        menuBG.color = 0x87ceeb;
+                    default:
+                        menuBG.color = 0x87ceeb;
  
 
                     alreadySelected = true;
