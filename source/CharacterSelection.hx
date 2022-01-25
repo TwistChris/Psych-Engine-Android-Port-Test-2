@@ -190,9 +190,7 @@ class CharMenu extends MusicBeatState
             
             if (controls.BACK)
                 if (PlayState.isStoryMode)
-                    FlxG.switchState(new StoryMenuState());
-                else {
-                    FlxG.switchState(new FreeplayState());
+                    FlxG.switchState(new MainMenuState());
                 }
         }
 
