@@ -28,6 +28,7 @@ class CharacterSelection extends MusicBeatState
 {
     var menuItems:Array<String> = ['bf', 'bf-christmas', 'torch', 'bf-car'];
     var curSelected:Int = 0;
+    var daSelected:Int = menuItems[curSelected];
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
 	var shitCharacterBetter:Boyfriend;
@@ -174,8 +175,6 @@ class CharacterSelection extends MusicBeatState
                         menuBG.loadGraphic('BG4');
 				        menuBG.color = 0xFFFFFF;
                     }
-
-                    var daSelected:String = menuItems[curSelected];
       
                     alreadySelected = true;
 
