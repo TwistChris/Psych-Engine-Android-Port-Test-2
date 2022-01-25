@@ -257,6 +257,5 @@ class CharMenu extends MusicBeatState
 		        //shitCharacter.screenCenter(XY);
 
                 doesntExist = true;
-                
             }
 }
