@@ -258,11 +258,5 @@ class CharMenu extends MusicBeatState
 
                 doesntExist = true;
                 
-                icon = new HealthIcon(menuItems[curSelected], true);
-                icon.y = healthBar.y - (icon.height / 2);
-                icon.screenCenter(X);
-                icon.setGraphicSize(-4);
-                icon.y -= 20;
-                add(icon);
             }
 }
