@@ -51,7 +51,6 @@ function onUpdate()
                 triggerEvent('Camera Follow Pos',xx,yy)
             end
         else
-
             if getProperty('dad2.animation.curAnim.name') == 'singLEFT' then
                 triggerEvent('Camera Follow Pos',xx3-ofs,yy3)
             end
