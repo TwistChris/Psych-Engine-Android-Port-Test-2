@@ -157,6 +157,8 @@ class CharMenu extends MusicBeatState
 
             if (accepted)
                 }
+                    alreadySelected = true;
+
                     switch (daSelected)
                 {
                     case "bf":
@@ -175,8 +177,6 @@ class CharMenu extends MusicBeatState
                         menuBG.loadGraphic('BG4');
 				        menuBG.color = 0xFFFFFF;
                 }
-
-                    alreadySelected = true;
    
                     PlayState.bfsel = daSelected;
        
