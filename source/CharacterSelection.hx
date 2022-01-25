@@ -157,7 +157,6 @@ class CharMenu extends MusicBeatState
 
             if (accepted)
                 }
-       
                     switch (daSelected)
                 {
                     case "bf":
