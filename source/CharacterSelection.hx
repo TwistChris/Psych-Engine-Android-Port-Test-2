@@ -174,7 +174,9 @@ class CharMenu extends MusicBeatState
                         menuBG.loadGraphic('BG4');
 				        menuBG.color = 0xFFFFFF;
                     }
-   
+
+                    var daSelected:String = menuItems[curSelected];
+      
                     alreadySelected = true;
 
                     PlayState.bfsel = daSelected;
@@ -182,7 +184,7 @@ class CharMenu extends MusicBeatState
                     FlxFlicker.flicker(iconArray[curSelected], 0);
                     new FlxTimer().start(1, function(tmr:FlxTimer)
                         {
-                            FlxG.switchState(new MainMenuState());
+                            LoadingState.loadAndSwitchState(new MainMenuState());
                         });
                 }
             
