@@ -258,4 +258,4 @@ class CharMenu extends MusicBeatState
 
                 doesntExist = true;
             }
-
+}
