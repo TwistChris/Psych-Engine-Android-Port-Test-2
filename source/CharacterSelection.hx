@@ -176,8 +176,6 @@ class CharMenu extends MusicBeatState
 				        menuBG.color = 0xFFFFFF;
                 }
 
-                    var daSelected:String = menuItems[curSelected];
-
                     alreadySelected = true;
    
                     PlayState.bfsel = daSelected;
