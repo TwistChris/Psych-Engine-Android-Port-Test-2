@@ -156,8 +156,7 @@ class CharMenu extends MusicBeatState
                 }
 
             if (accepted)
-                {
-                    var daSelected:Int = menuItems[curSelected];
+                }
        
                     switch (daSelected)
                 {
@@ -177,6 +176,8 @@ class CharMenu extends MusicBeatState
                         menuBG.loadGraphic('BG4');
 				        menuBG.color = 0xFFFFFF;
                 }
+
+                    var daSelected:String = menuItems[curSelected];
 
                     alreadySelected = true;
    
