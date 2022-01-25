@@ -26,7 +26,7 @@ typedef CharacterMenu = {
 
 class CharMenu extends MusicBeatState
 {
-    var menuItems:Array<String> = ['bf', 'bf-christmas', 'torch', 'bf-car'];
+    var menuItems:Array<String> = ['bf', 'beta', 'blue', 'mean'];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
@@ -45,9 +45,9 @@ class CharMenu extends MusicBeatState
 
     var names:Array<String> = [
         "Boyfriend",
-        "Boyfriend in Christmas Clothing",
-        "Torch the Dragon",
-        "Boyfriend on a Car"
+        "Boyfriend Beta",
+        "Boyfriend Blue",
+        "Boyfriend Mean"
     ];
 
     var txtOptionTitle:FlxText;
@@ -88,7 +88,7 @@ class CharMenu extends MusicBeatState
 
         txtDescription = new FlxText(FlxG.width * 0.075, menuBG.y + 200, 0, "", 32);
         txtDescription.alignment = CENTER;
-        txtDescription.setFormat("assets/fonts/pdark.ttf", 32);
+        txtDescription.setFormat(Paths.font("vcr.ttf"), 36);
         txtDescription.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 1.5, 1);
         txtDescription.color = FlxColor.WHITE;
         add(txtDescription);
@@ -119,6 +119,10 @@ class CharMenu extends MusicBeatState
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+
+        #if mobileC		
+        addVirtualPad(FULL, A_B);		
+        #end
 
         super.create();
     }
@@ -152,15 +156,22 @@ class CharMenu extends MusicBeatState
                     changeSelection(1);
                 }
 
-            if (accepted)
-                {
-                    alreadySelected = true;
-                    var daSelected:String = menuItems[curSelected];
-                    PlayState.hasPlayedOnce = true;
-                    if (menuItems[curSelected] != 'bf')
-                        PlayState.SONG.player1 = daSelected;
+            if (accepted){
+                    switch (daSelected){
+                    case "bf"
+                    case "beta"
+                    case "blue"
+                    case "mean"
+                    default
+ 
 
-                    FlxFlicker.flicker(iconArray[curSelected], 0);
+                    alreadySelected = true;
+                    PlayState.bfsel = daSelected;
+
+
+     
+                    FlxG.sound.play(Paths.sound('confirmMenu'));
+
                     new FlxTimer().start(1, function(tmr:FlxTimer)
                         {
                             LoadingState.loadAndSwitchState(new PlayState());
@@ -168,10 +179,8 @@ class CharMenu extends MusicBeatState
                 }
             
             if (controls.BACK)
-                if (PlayState.isStoryMode)
-                    FlxG.switchState(new StoryMenuState());
-                else {
-                    FlxG.switchState(new FreeplayState());
+                {
+                    FlxG.switchState(new MainMenuState());
                 }
         }
 
@@ -243,25 +252,12 @@ class CharMenu extends MusicBeatState
 		        //shitCharacter.screenCenter(XY);
 
                 doesntExist = true;
-
-                var healthBarBG:FlxSprite = new FlxSprite(0, FlxG.height * 0.9).loadGraphic('assets/shared/images/healthBar.png');
-                healthBarBG.screenCenter(X);
-		        healthBarBG.scrollFactor.set();
-		        healthBarBG.visible = false;
-		        add(healthBarBG);
-
-                var healthBar:FlxBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
-                    'health', 0, 2);
-                healthBar.scrollFactor.set();
-                healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
-                healthBar.visible = false;
-                // healthBar
-                add(healthBar);
+                
                 icon = new HealthIcon(menuItems[curSelected], true);
                 icon.y = healthBar.y - (icon.height / 2);
                 icon.screenCenter(X);
                 icon.setGraphicSize(-4);
                 icon.y -= 20;
-                add(icon); 
+                add(icon);
             }
 }
