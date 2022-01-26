@@ -746,6 +746,10 @@ class PlayState extends MusicBeatState
 				dad2 = new Character(-90, 335, 'matt-final');
 				dadGroup.add(dad2);
 			}
+
+                boyfriend = new Boyfriend(0, 0, SONG.player1);
+                startCharacterPos(boyfriend);
+                boyfriendGroup.add(boyfriend);
 		
 		var camPos:FlxPoint = new FlxPoint(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 		camPos.x += gf.cameraPosition[0];
@@ -754,34 +758,6 @@ class PlayState extends MusicBeatState
 		if(dad.curCharacter.startsWith('gf')) {
 			dad.setPosition(GF_X, GF_Y);
 			gf.visible = false;
-		}
-
-                switch bfsel{
-			case 0:
-				boyfriend = new Boyfriend(0, 0, SONG.player1);
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-				trace("bf!");
-			case 1:
-				boyfriend = new Boyfriend(0, 0, 'beta');
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-				trace("beta!");
-                        case 2:
-				boyfriend = new Boyfriend(0, 0, 'blue');
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-				trace("blue!");
-			case 3:
-				boyfriend = new Boyfriend(0, 0, 'mean');
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-				trace("mean!");
-			default:
-				trace("default!");
-				boyfriend = new Boyfriend(0, 0, SONG.player1);
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
 		}
 
 		switch(curStage)
