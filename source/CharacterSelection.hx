@@ -157,8 +157,6 @@ class CharacterSelection extends MusicBeatState
 
             if (accepted)
                 {
-                    var daSelected = menuItems[curSelected];
-
                     switch (daSelected){
                     case "bf":
                         menuBG.loadGraphic('BG1');
