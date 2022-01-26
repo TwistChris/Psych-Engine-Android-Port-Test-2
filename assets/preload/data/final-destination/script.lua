@@ -1,10 +1,8 @@
 
-local xx = 580;
-local yy = 420;
-local xx2 = 1020;
-local yy2 = 650;
-local xx3 = 1020;
-local yy3 = 650;
+local xx = 520;
+local yy = 450;
+local xx2 = 820;
+local yy2 = 450;
 local ofs = 35;
 local followchars = true;
 local del = 0;
@@ -49,22 +47,6 @@ function onUpdate()
             end
             if getProperty('dad.animation.curAnim.name') == 'idle' then
                 triggerEvent('Camera Follow Pos',xx,yy)
-            end
-        else
-            if getProperty('dad2.animation.curAnim.name') == 'singLEFT' then
-                triggerEvent('Camera Follow Pos',xx3-ofs,yy3)
-            end
-            if getProperty('dad2.animation.curAnim.name') == 'singRIGHT' then
-                triggerEvent('Camera Follow Pos',xx3+ofs,yy3)
-            end
-            if getProperty('dad2.animation.curAnim.name') == 'singUP' then
-                triggerEvent('Camera Follow Pos',xx3,yy3-ofs)
-            end
-            if getProperty('dad2.animation.curAnim.name') == 'singDOWN' then
-                triggerEvent('Camera Follow Pos',xx3,yy3+ofs)
-            end
-	    if getProperty('dad2.animation.curAnim.name') == 'idle' then
-                triggerEvent('Camera Follow Pos',xx3,yy3)
             end
         else
 
