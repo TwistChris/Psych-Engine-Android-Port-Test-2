@@ -128,6 +128,8 @@ class PlayState extends MusicBeatState
 
         public static var hasPlayedOnce:Bool = false;
 
+        public static var bfsel:Int = 0;
+
         var bfcansing:Bool = true;
 	var dadcansing:Bool = true;
 	var gfcansing:Bool = false;
