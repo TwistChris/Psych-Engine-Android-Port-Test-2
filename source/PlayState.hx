@@ -756,7 +756,7 @@ class PlayState extends MusicBeatState
 			gf.visible = false;
 		}
 
-                switch (SONG.player1){
+                switch bfsel{
 			case "bf":
 				boyfriend = new Boyfriend(0, 0, SONG.player1);
                                 startCharacterPos(boyfriend);
