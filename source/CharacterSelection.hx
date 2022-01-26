@@ -92,10 +92,10 @@ class CharacterSelection extends MusicBeatState
         txtDescription.color = FlxColor.WHITE;
         add(txtDescription);
 
-        //shitCharacter = new FlxSprite(0, -20);
+        //shitCharacter = new FlxSprite(0, 0);
         //shitCharacter.scale.set(0.45, 0.45);
 		//shitCharacter.updateHitbox();
-		//shitCharacter.screenCenter(XY);
+		//shitCharacter.screenCenter(X);
 		//shitCharacter.antialiasing = true;
 		//shitCharacter.y += 30;
 		//add(shitCharacter);
