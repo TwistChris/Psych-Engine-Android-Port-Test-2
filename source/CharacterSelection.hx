@@ -157,6 +157,8 @@ class CharacterSelection extends MusicBeatState
 
             if (accepted)
                 {
+                    var daSelected:String = menuItems[curSelected];
+
                     switch (daSelected){
                     case "bf":
                         menuBG.loadGraphic('BG1');
@@ -176,7 +178,6 @@ class CharacterSelection extends MusicBeatState
                     }
       
                     alreadySelected = true;
-                    var daSelected:String = menuItems[curSelected];
                     PlayState.bfsel = daSelected;
        
                     FlxFlicker.flicker(iconArray[curSelected], 0);
