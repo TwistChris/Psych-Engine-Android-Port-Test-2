@@ -83,15 +83,6 @@ class CharacterSelection extends MusicBeatState
             //Using a FlxGroup is too much fuss!
             iconArray.push(icon);
             add(icon);
-
-            var offset:Float = 108 - (Math.max(menuItems.length, 4) - 4) * 80;
-	    shitCharacter:FlxSprite = new FlxSprite(0, (i * 140)  + offset);
-            shitCharacter.scale.set(0.45, 0.45);
-	    shitCharacter.updateHitbox();
-	    shitCharacter.screenCenter(X);
-	    shitCharacter.antialiasing = true;
-	    shitCharacter.y += 30;
-            add(shitCharacter);
         }
 
         txtDescription = new FlxText(FlxG.width * 0.075, menuBG.y + 200, 0, "", 32);
@@ -100,6 +91,15 @@ class CharacterSelection extends MusicBeatState
         txtDescription.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 1.5, 1);
         txtDescription.color = FlxColor.WHITE;
         add(txtDescription);
+
+        var offset:Float = 108 - (Math.max(menuItems.length, 4) - 4) * 80;
+	shitCharacter = new FlxSprite(0, (i * 140)  + offset);
+        shitCharacter.scale.set(0.45, 0.45);
+	shitCharacter.updateHitbox();
+	shitCharacter.screenCenter(X);
+	shitCharacter.antialiasing = true;
+	shitCharacter.y += 30;
+        add(shitCharacter);
 
         var charSelHeaderText:Alphabet = new Alphabet(0, 50, 'Character Select', true, false);
         charSelHeaderText.screenCenter(X);
