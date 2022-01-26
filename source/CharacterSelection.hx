@@ -157,27 +157,10 @@ class CharacterSelection extends MusicBeatState
 
             if (accepted)
                 {
-                    switch (daSelected){
-                    case "bf":
-                        menuBG.loadGraphic('BG1');
-                        menuBG.color = 0x87ceeb;
-                    case "bf-christmas":
-                        menuBG.loadGraphic('BG2');
-                        menuBG.color = 0xFFFFFF;
-                    case "torch":
-                        menuBG.loadGraphic('BG3');
-				        menuBG.color = 0xFF00FF;
-                    case "bf-car":
-                        menuBG.loadGraphic('BG1');
-				        menuBG.color = 0xFF00FF;
-                    default:
-                        menuBG.loadGraphic('BG4');
-				        menuBG.color = 0xFFFFFF;
-                    }
-      
                     alreadySelected = true;
-
-                    PlayState.bfsel = daSelected;
+                    var daSelected:String = menuItems[curSelected];
+                    if (menuItems[curSelected] != 'bf')
+                        PlayState.bfsel = daSelected;
        
                     FlxFlicker.flicker(iconArray[curSelected], 0);
                     new FlxTimer().start(1, function(tmr:FlxTimer)
