@@ -178,6 +178,7 @@ class CharacterSelection extends MusicBeatState
                     }
       
                     alreadySelected = true;
+
                     PlayState.bfsel = daSelected;
        
                     FlxFlicker.flicker(iconArray[curSelected], 0);
