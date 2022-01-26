@@ -157,7 +157,7 @@ class CharacterSelection extends MusicBeatState
 
             if (accepted)
                 {
-                    var daSelected:Int = menuItems[curSelected];
+                    var daSelected = menuItems[curSelected];
 
                     switch (daSelected){
                     case "bf":
