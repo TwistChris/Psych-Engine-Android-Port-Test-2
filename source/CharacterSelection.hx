@@ -76,13 +76,13 @@ class CharacterSelection extends MusicBeatState
             //songText.x += 40;
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
-            var icon:Boyfriend = new Boyfriend(0, 0 'bf');
+            var icon:Boyfriend = new Boyfriend(0, 0, menuItems[i]);
 
             icon.scale.set(0.8, 0.8);
 
             //Using a FlxGroup is too much fuss!
             iconArray.push(icon);
-            add(icon);
+            remove(icon);
 
             var offset:Float = 108 - (Math.max(menuItems.length, 4) - 4) * 80;
 	    shitCharacter = new FlxSprite(0, (i * 140)  + offset);
@@ -246,8 +246,8 @@ class CharacterSelection extends MusicBeatState
                         var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                 }
 
-                //shitCharacter.updateHitbox();
-		        //shitCharacter.screenCenter(XY);
+                shitCharacter.updateHitbox();
+		        shitCharacter.screenCenter(X);
 
                 doesntExist = true;
 
