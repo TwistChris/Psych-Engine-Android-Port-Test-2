@@ -84,7 +84,7 @@ class CharacterSelection extends MusicBeatState
             iconArray.push(icon);
             remove(icon);
 
-            var offset:Float = 108 - (Math.max(menuItems.length, 4) - 4) * 80;
+            var offset:Float = 108 - (Math.max(menuItems[i].length, 4) - 4) * 80;
 	    shitCharacter = new FlxSprite(0, (i * 140)  + offset);
             shitCharacter.scale.set(0.45, 0.45);
 	    shitCharacter.updateHitbox();
