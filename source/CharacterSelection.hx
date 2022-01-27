@@ -225,7 +225,7 @@ class CharacterSelection extends MusicBeatState
                     case "bf":
                         menuBG.loadGraphic('BG1');
                         menuBG.color = 0x87ceeb;
-                        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
+                        var icon:Boyfriend = new Boyfriend(0, 0, menuItems);
                     case "bf-christmas":
                         menuBG.loadGraphic('BG2');
                         menuBG.color = 0xFFFFFF;
