@@ -80,7 +80,7 @@ class CharacterSelection extends MusicBeatState
 
             if (menuItems[curSelected] == 'bf')
 	    {
-	        var icon:Boyfriend = new Boyfriend(0, 0 'bf');
+	        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
 	    }
 
             icon.scale.set(0.8, 0.8);
