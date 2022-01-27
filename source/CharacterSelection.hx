@@ -81,6 +81,7 @@ class CharacterSelection extends MusicBeatState
 
             //Using a FlxGroup is too much fuss!
             iconArray.push(icon);
+            add(icon);
 
             var offset:Float = 108 - (Math.max(menuItems.length, 4) - 4) * 80;
 	    shitCharacter = new FlxSprite(0, (i * 140)  + offset);
