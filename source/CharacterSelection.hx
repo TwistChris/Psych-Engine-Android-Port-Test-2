@@ -27,6 +27,7 @@ typedef CharacterMenu = {
 class CharacterSelection extends MusicBeatState
 {
     var menuItems:Array<String> = ['bf', 'bf-christmas', 'torch', 'bf-car'];
+    var nameIcons:Array<String> = ['bf', 'bf', 'bf', 'bf'];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
@@ -76,7 +77,7 @@ class CharacterSelection extends MusicBeatState
             //songText.x += 40;
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
-            var icon:Boyfriend = new Boyfriend(0, 0, menuItems[i]);
+            var icon:Boyfriend = new Boyfriend(0, 0, nameIcons);
 
             icon.scale.set(0.8, 0.8);
 
