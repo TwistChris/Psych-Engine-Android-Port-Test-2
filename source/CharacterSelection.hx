@@ -76,22 +76,27 @@ class CharacterSelection extends MusicBeatState
             //songText.x += 40;
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
-            var icon:Boyfriend = new Boyfriend(0, 0);
+            var icon:Boyfriend = new Boyfriend(0, 0, menuItems[i]);
+
+            if (menuItems[curSelected] == 'bf')
+	    {
+	        var icon:Boyfriend = new Boyfriend(0, 0 'bf');
+	    }
 
             icon.scale.set(0.8, 0.8);
 
             //Using a FlxGroup is too much fuss!
             iconArray.push(icon);
-            remove(icon);
+            add(icon);
 
-            var offset:Float = 108 - (Math.max(menuItems[i].length, 4) - 4) * 80;
-	    shitCharacter = new FlxSprite(0, (i * 140)  + offset + menuItems[i]);
-            shitCharacter.scale.set(0.45, 0.45);
-	    shitCharacter.updateHitbox();
-	    shitCharacter.screenCenter(X);
-	    shitCharacter.antialiasing = true;
-	    shitCharacter.y += 30;
-            add(shitCharacter);
+            //var offset:Float = 108 - (Math.max(menuItems[i].length, 4) - 4) * 80;
+	    //shitCharacter = new FlxSprite(0, (i * 140)  + offset + menuItems[i]);
+            //shitCharacter.scale.set(0.45, 0.45);
+	    //shitCharacter.updateHitbox();
+	    //shitCharacter.screenCenter(X);
+	    //shitCharacter.antialiasing = true;
+	    //shitCharacter.y += 30;
+            //add(shitCharacter);
         }
 
         txtDescription = new FlxText(FlxG.width * 0.075, menuBG.y + 200, 0, "", 32);
@@ -220,34 +225,28 @@ class CharacterSelection extends MusicBeatState
                 doesntExist = false;
                 var daSelected:String = menuItems[curSelected];
                 var storedColor:FlxColor = 0xFFFFFF;
-                add(icon);
 
                 switch (daSelected)
                 {
                     case "bf":
                         menuBG.loadGraphic('BG1');
                         menuBG.color = 0x87ceeb;
-                        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     case "bf-christmas":
                         menuBG.loadGraphic('BG2');
                         menuBG.color = 0xFFFFFF;
-                        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     case "torch":
                         menuBG.loadGraphic('BG3');
 	    			        menuBG.color = 0xFF00FF;
-                        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     case "bf-car":
                         menuBG.loadGraphic('BG1');
 				        menuBG.color = 0xFF00FF;
-                        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     default:
                         menuBG.loadGraphic('BG4');
 				        menuBG.color = 0xFFFFFF;
-                        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                 }
 
-                shitCharacter.updateHitbox();
-		        shitCharacter.screenCenter(X);
+                //shitCharacter.updateHitbox();
+		        //shitCharacter.screenCenter(X);
 
                 doesntExist = true;
 
