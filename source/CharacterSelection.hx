@@ -227,23 +227,23 @@ class CharacterSelection extends MusicBeatState
                     case "bf":
                         menuBG.loadGraphic('BG1');
                         menuBG.color = 0x87ceeb;
-                        icon:Boyfriend = new Boyfriend(0, 0, 'bf');
+                        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     case "bf-christmas":
                         menuBG.loadGraphic('BG2');
                         menuBG.color = 0xFFFFFF;
-                        icon:Boyfriend = new Boyfriend(0, 0, 'bf');
+                        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     case "torch":
                         menuBG.loadGraphic('BG3');
 	    			        menuBG.color = 0xFF00FF;
-                        icon:Boyfriend = new Boyfriend(0, 0, 'bf');
+                        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     case "bf-car":
                         menuBG.loadGraphic('BG1');
 				        menuBG.color = 0xFF00FF;
-                        icon:Boyfriend = new Boyfriend(0, 0, 'bf');
+                        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     default:
                         menuBG.loadGraphic('BG4');
 				        menuBG.color = 0xFFFFFF;
-                        icon:Boyfriend = new Boyfriend(0, 0, 'bf');
+                        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                 }
 
                 //shitCharacter.updateHitbox();
