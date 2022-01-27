@@ -27,7 +27,7 @@ typedef CharacterMenu = {
 class CharacterSelection extends MusicBeatState
 {
     var menuItems:Array<String> = ['bf', 'bf-christmas', 'torch', 'bf-car'];
-    var nameIcons:Array<String> = ['bf', 'bf', 'bf', 'bf'];
+    var nameIcons:Null<String> = ['bf', 'bf', 'bf', 'bf'];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
