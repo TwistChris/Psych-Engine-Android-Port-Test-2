@@ -27,7 +27,6 @@ typedef CharacterMenu = {
 class CharacterSelection extends MusicBeatState
 {
     var menuItems:Array<String> = ['bf', 'bf-christmas', 'torch', 'bf-car'];
-    var nameIcons:Null<String> = ['bf', 'bf', 'bf', 'bf'];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
@@ -77,7 +76,7 @@ class CharacterSelection extends MusicBeatState
             //songText.x += 40;
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
-            var icon:Boyfriend = new Boyfriend(0, 0, nameIcons);
+            var icon:Boyfriend = new Boyfriend(0, 0, menuItems[i]);
 
             icon.scale.set(0.8, 0.8);
 
@@ -221,25 +220,30 @@ class CharacterSelection extends MusicBeatState
                 doesntExist = false;
                 var daSelected:String = menuItems[curSelected];
                 var storedColor:FlxColor = 0xFFFFFF;
-                remove(icon);
+                add(icon);
 
                 switch (daSelected)
                 {
                     case "bf":
                         menuBG.loadGraphic('BG1');
                         menuBG.color = 0x87ceeb;
+                        icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     case "bf-christmas":
                         menuBG.loadGraphic('BG2');
                         menuBG.color = 0xFFFFFF;
+                        icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     case "torch":
                         menuBG.loadGraphic('BG3');
-				        menuBG.color = 0xFF00FF;
+	    			        menuBG.color = 0xFF00FF;
+                        icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     case "bf-car":
                         menuBG.loadGraphic('BG1');
 				        menuBG.color = 0xFF00FF;
+                        icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                     default:
                         menuBG.loadGraphic('BG4');
 				        menuBG.color = 0xFFFFFF;
+                        icon:Boyfriend = new Boyfriend(0, 0, 'bf');
                 }
 
                 //shitCharacter.updateHitbox();
