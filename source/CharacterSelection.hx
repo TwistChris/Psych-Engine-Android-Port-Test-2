@@ -76,7 +76,7 @@ class CharacterSelection extends MusicBeatState
             //songText.x += 40;
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
-            var icon = new HealthIcon(0, 0, 'characters/' + menuItems[i]);
+            var icon = new HealthIcon('characters/' + menuItems[i], true);
 
             icon.scale.set(0.8, 0.8);
 
