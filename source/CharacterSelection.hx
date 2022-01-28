@@ -41,7 +41,7 @@ class CharacterSelection extends MusicBeatState
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
-    private var iconArray:Array<HealthIcon> = [];
+    private var iconArray:Array<Boyfriend> = [];
 
     var names:Array<String> = [
         "Boyfriend",
@@ -76,7 +76,7 @@ class CharacterSelection extends MusicBeatState
             //songText.x += 40;
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
-            icon = new HealthIcon('characters/' + menuItems[i], true);
+            var icon:Boyfriend = new Boyfriend('characters/' + menuItems[i], true);
 
             icon.scale.set(0.8, 0.8);
 
