@@ -76,12 +76,7 @@ class CharacterSelection extends MusicBeatState
             //songText.x += 40;
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
-            var icon:Boyfriend = new Boyfriend(0, 0, menuItems[i]);
-
-            if (menuItems[curSelected] == 'bf')
-	    {
-	        var icon:Boyfriend = new Boyfriend(0, 0, 'bf');
-	    }
+            var icon = new HealthIcon(0, 0, 'characters/' + menuItems[i]);
 
             icon.scale.set(0.8, 0.8);
 
@@ -225,6 +220,7 @@ class CharacterSelection extends MusicBeatState
                 doesntExist = false;
                 var daSelected:String = menuItems[curSelected];
                 var storedColor:FlxColor = 0xFFFFFF;
+                remove(icon);
 
                 switch (daSelected)
                 {
