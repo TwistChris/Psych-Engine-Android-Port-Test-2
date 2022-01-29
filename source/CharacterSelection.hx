@@ -41,7 +41,7 @@ class CharacterSelection extends MusicBeatState
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
-    private var iconArray:Array<Boyfriend> = [];
+    private var iconArray:Array<HealthIcon> = [];
 
     var names:Array<String> = [
         "Boyfriend",
@@ -76,7 +76,7 @@ class CharacterSelection extends MusicBeatState
             //songText.x += 40;
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
-            var icon:Boyfriend = new Boyfriend(0, 0, 'characters/' + menuItems[i]);
+            var icon:HealthIcon = new HealthIcon(0, 0, menuItems[i]);
 
             icon.scale.set(0.8, 0.8);
 
@@ -135,10 +135,7 @@ class CharacterSelection extends MusicBeatState
             {
                 trace('');
                 txtOptionTitle.text = '';
-            }    
-
-        if (iconArray[curSelected].animation.curAnim.name == 'idle' && iconArray[curSelected].animation.curAnim.finished && doesntExist)
-            iconArray[curSelected].playAnim('idle', true);
+            }
 
         var upP = controls.UI_LEFT_P;
         var downP = controls.UI_RIGHT_P;
