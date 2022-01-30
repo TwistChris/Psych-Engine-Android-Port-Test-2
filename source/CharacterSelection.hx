@@ -192,9 +192,9 @@ class CharacterSelection extends MusicBeatState
     function changeSelection(change:Int = 0):Void
         {
 
-            for (i in 0...menuItems.length)
+            for (i in 0...grpMenuImage.length)
                 {
-                    menuItems[i].x = 470 - (menuItems[i].x / i+1) * (FlxG.width/2) * (curSelected + i) * (FlxG.width/2) * (curSelected + i);
+                    grpMenuImage[i].x = 470 - (grpMenuImage[i].x / i+1) * (FlxG.width/2) * (curSelected + i) * (FlxG.width/2) * (curSelected + i);
                 }
 
             curSelected += change;
@@ -237,7 +237,7 @@ class CharacterSelection extends MusicBeatState
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
 
-                color = new FlxColor(nameColors[curSelected], true);
+                var color = new FlxColor(nameColors[curSelected], true);
 
                 //shitCharacter.updateHitbox();
 		        //shitCharacter.screenCenter(X);
