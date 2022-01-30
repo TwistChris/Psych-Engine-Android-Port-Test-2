@@ -26,7 +26,7 @@ typedef CharacterMenu = {
 
 class CharacterSelection extends MusicBeatState
 {
-    var menuItems:Array<String> = ['bf', 'bf-christmas', 'torch', 'bf-car'];
+    var menuItems:Array<String> = ['bf', 'beta', 'blue', 'mean'];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
@@ -79,21 +79,9 @@ class CharacterSelection extends MusicBeatState
             //songText.x += 40;
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
+            var icon:Boyfriend = new Boyfriend(0, 0, menuItems[i]);
 
-            //var offset:Float = 108 - (Math.max(menuItems[i].length, 4) - 4) * 80;
-	    //shitCharacter = new FlxSprite(0, (i * 140)  + offset + menuItems[i]);
-            //shitCharacter.scale.set(0.45, 0.45);
-	    //shitCharacter.updateHitbox();
-	    //shitCharacter.screenCenter(X);
-	    //shitCharacter.antialiasing = true;
-	    //shitCharacter.y += 30;
-            //add(shitCharacter);
-        }
-
-        for (i in 0...nameIcons.length)
-        { 
-            var icon:HealthIcon = new HealthIcon(nameIcons[i]);
-
+            icon.sprTracker = songText;
             icon.scale.set(0.8, 0.8);
 
             //Using a FlxGroup is too much fuss!
@@ -107,6 +95,15 @@ class CharacterSelection extends MusicBeatState
         txtDescription.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.BLACK, 1.5, 1);
         txtDescription.color = FlxColor.WHITE;
         add(txtDescription);
+
+        //shitCharacter = new FlxSprite(0, 0);
+        //shitCharacter.scale.set(0.45, 0.45);
+		//shitCharacter.updateHitbox();
+		//shitCharacter.screenCenter(X);
+		//shitCharacter.antialiasing = true;
+		//shitCharacter.x += 250;
+                //shitCharacter.y += 30;
+		//add(shitCharacter);
 
         var charSelHeaderText:Alphabet = new Alphabet(0, 50, 'Character Select', true, false);
         charSelHeaderText.screenCenter(X);
@@ -202,17 +199,19 @@ class CharacterSelection extends MusicBeatState
             
             iconArray[curSelected].alpha = 1;
 
+            var otherInt:Int = 0;
             for (item in grpMenu.members)
                 {
                     item.targetY = otherInt - curSelected;
                     otherInt++;
 
-                    item.alpha = 0;
+                    item.alpha = 0.6;
                     //item.setGraphicSize(Std.int(item.width * 0.8));
 
                     if (item.targetY == 0)
                         {
-                            // item.setGraphicSize(Std.int(item.width));
+                            item.alpha = 1;
+                            //item.setGraphicSize(Std.int(item.width));
                         }
                 }
             
@@ -263,7 +262,7 @@ class CharacterSelection extends MusicBeatState
                 healthBar.visible = false;
                 // healthBar
                 add(healthBar);
-                icon = new HealthIcon(menuItems[curSelected], true);
+                icon = new HealthIcon(nameIcons[curSelected], true);
                 icon.y = healthBar.y - (icon.height / 2);
                 icon.screenCenter(X);
                 icon.setGraphicSize(-4);
