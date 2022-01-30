@@ -39,7 +39,7 @@ class CharacterSelection extends MusicBeatState
 
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
-    var nameIcons:String = [];
+    var nameIcons:Array<String> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<HealthIcon> = [];
@@ -92,7 +92,7 @@ class CharacterSelection extends MusicBeatState
 
         for (i in 0...nameIcons.length)
         { 
-            var icon:HealthIcon = new HealthIcon(nameIcons);
+            var icon:HealthIcon = new HealthIcon(nameIcons[i]);
 
             icon.scale.set(0.8, 0.8);
 
