@@ -237,7 +237,7 @@ class CharacterSelection extends MusicBeatState
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
 
-                color:FlxColor = nameColors[curSelected];
+                var color:FlxColor = nameColors[curSelected];
                 add(color);
 
                 //shitCharacter.updateHitbox();
