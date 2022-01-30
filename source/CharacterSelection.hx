@@ -39,7 +39,7 @@ class CharacterSelection extends MusicBeatState
 
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
-    var nameIcons:Array<String> = [];
+    var nameIcons:String = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<HealthIcon> = [];
@@ -95,6 +95,17 @@ class CharacterSelection extends MusicBeatState
 	    //shitCharacter.antialiasing = true;
 	    //shitCharacter.y += 30;
             //add(shitCharacter);
+        }
+
+        for (i in 0...nameIcons.length)
+        { 
+            var icon:HealthIcon = new HealthIcon(nameIcons);
+
+            icon.scale.set(0.8, 0.8);
+
+            //Using a FlxGroup is too much fuss!
+            iconArray.push(icon);
+            add(icon);
         }
 
         txtDescription = new FlxText(FlxG.width * 0.075, menuBG.y + 200, 0, "", 32);
