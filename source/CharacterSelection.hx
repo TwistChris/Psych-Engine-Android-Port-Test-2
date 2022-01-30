@@ -46,12 +46,7 @@ class CharacterSelection extends MusicBeatState
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
 
-    var names:Array<String> = [
-        "Boyfriend",
-        "Boyfriend in Christmas Clothing",
-        "Torch the Dragon",
-        "Boyfriend on a Car"
-    ];
+    var names:Array<String> = [];
 
     var txtOptionTitle:FlxText;
 
@@ -63,6 +58,11 @@ class CharacterSelection extends MusicBeatState
         menuBG.screenCenter();
         menuBG.antialiasing = true;
         add(menuBG);
+ 
+        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
+
+        yellowBG = new FlxSprite().makeGraphic(FlxG.width * 1.1, FlxColor.fromRGB(nameColors));
+        add(yellowBG);
 
         grpMenu = new FlxTypedGroup<Alphabet>();
         add(grpMenu);
@@ -73,8 +73,6 @@ class CharacterSelection extends MusicBeatState
         menuItems = CoolUtil.coolTextFile(Paths.txt('charSelect'));
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
-
-        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
         for (i in 0...menuItems.length)
         {
@@ -237,8 +235,8 @@ class CharacterSelection extends MusicBeatState
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
 
-                var color:FlxColor = new FlxColor(nameColors[curSelected]);
-                add(color);
+                yellowBG.color = CoolUtil.dominantColor(nameColors[curSelected]);
+                add(yellowBG.color);
 
                 //shitCharacter.updateHitbox();
 		        //shitCharacter.screenCenter(X);
