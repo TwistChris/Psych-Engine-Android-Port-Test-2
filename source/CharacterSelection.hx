@@ -92,8 +92,6 @@ class CharacterSelection extends MusicBeatState
             //Using a FlxGroup is too much fuss!
             iconArray.push(icon);
             add(icon);
-
-            if (menuItems[i].x = 470 - (menuItems[i].x / i+1));(FlxG.width/2) * (curSelected + i) - (FlxG.width/2) * (curSelected + i));
         }
 
         txtDescription = new FlxText(FlxG.width * 0.075, menuBG.y + 200, 0, "", 32);
@@ -193,6 +191,12 @@ class CharacterSelection extends MusicBeatState
 
     function changeSelection(change:Int = 0):Void
         {
+
+            for (i in 0...menuItems.length)
+                {
+                    if (menuItems[i].x = 470 - (menuItems[i].x / i+1));(FlxG.width/2) * (curSelected + i) - (FlxG.width/2) * (curSelected + i));
+                }
+
             curSelected += change;
 
             if (curSelected >= menuItems.length)
