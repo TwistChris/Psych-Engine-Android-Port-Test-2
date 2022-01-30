@@ -31,7 +31,7 @@ class CharacterSelection extends MusicBeatState
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
 	var shitCharacterBetter:Boyfriend;
-    var icon:Array<String> = [];
+    var icon:HealthIcon;
     var menuBG:FlxSprite;
     public var tagertY:Float = 0;
     var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
