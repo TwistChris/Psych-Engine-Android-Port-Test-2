@@ -31,7 +31,7 @@ class CharacterSelection extends MusicBeatState
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
 	var shitCharacterBetter:Boyfriend;
-    var icon:HealthIcon;
+    var icon:Array<String> = [];
     var menuBG:FlxSprite;
     public var tagertY:Float = 0;
     var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
@@ -76,7 +76,7 @@ class CharacterSelection extends MusicBeatState
             //songText.x += 40;
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
-            var icon:HealthIcon = new HealthIcon().CoolUtil.coolTextFile(Paths.txt('icons'));
+            var icon = CoolUtil.coolTextFile(Paths.txt('icons'));
 
             icon.scale.set(0.8, 0.8);
 
