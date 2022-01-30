@@ -74,7 +74,7 @@ class CharacterSelection extends MusicBeatState
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
-        nameColors = CoolUtil.coolTextFile(Paths.txt('colors));
+        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
         for (i in 0...menuItems.length)
         {
