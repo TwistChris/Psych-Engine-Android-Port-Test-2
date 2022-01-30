@@ -67,6 +67,8 @@ class CharacterSelection extends MusicBeatState
         grpMenuImage = new FlxTypedGroup<FlxSprite>();
         add(grpMenuImage);
 
+        nameIcons = CoolUtil.coolTextFile(Paths.txt('icons')));
+
         for (i in 0...menuItems.length)
         {
             var songText:Alphabet = new Alphabet(170, (70 * i) + 230, menuItems[i], true, false);
@@ -76,7 +78,7 @@ class CharacterSelection extends MusicBeatState
             //songText.x += 40;
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
-            var icon:HealthIcon = new HealthIcon(CoolUtil.coolTextFile(Paths.txt('icons')));
+            var icon:HealthIcon = new HealthIcon(nameIcons);
 
             icon.scale.set(0.8, 0.8);
 
