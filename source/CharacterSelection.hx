@@ -74,6 +74,8 @@ class CharacterSelection extends MusicBeatState
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
+        names = CoolUtil.coolTextFile(Paths.txt('names'));
+
         for (i in 0...menuItems.length)
         {
             var songText:Alphabet = new Alphabet(170, (70 * i) + 230, menuItems[i], true, false);
