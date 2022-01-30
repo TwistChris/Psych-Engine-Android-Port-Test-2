@@ -42,7 +42,7 @@ class CharacterSelection extends MusicBeatState
     var nameIcons:Array<String> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
-    private var iconArray:Array<HealthIcon> = [];
+    private var iconArray:Array<Boyfriend> = [];
 
     var names:Array<String> = [
         "Boyfriend",
@@ -81,7 +81,6 @@ class CharacterSelection extends MusicBeatState
             //songText.screenCenter(X);
             var icon:Boyfriend = new Boyfriend(0, 0, menuItems[i]);
 
-            icon.sprTracker = songText;
             icon.scale.set(0.8, 0.8);
 
             //Using a FlxGroup is too much fuss!
@@ -100,9 +99,9 @@ class CharacterSelection extends MusicBeatState
         //shitCharacter.scale.set(0.45, 0.45);
 		//shitCharacter.updateHitbox();
 		//shitCharacter.screenCenter(X);
-		//shitCharacter.antialiasing = true;
-		//shitCharacter.x += 250;
+                //shitCharacter.x += 250;
                 //shitCharacter.y += 30;
+		//shitCharacter.antialiasing = true;
 		//add(shitCharacter);
 
         var charSelHeaderText:Alphabet = new Alphabet(0, 50, 'Character Select', true, false);
@@ -230,13 +229,13 @@ class CharacterSelection extends MusicBeatState
                     case "bf":
                         menuBG.loadGraphic('BG1');
                         menuBG.color = 0x87ceeb;
-                    case "bf-christmas":
+                    case "beta":
                         menuBG.loadGraphic('BG2');
                         menuBG.color = 0xFFFFFF;
-                    case "torch":
+                    case "blue":
                         menuBG.loadGraphic('BG3');
 	    			        menuBG.color = 0xFF00FF;
-                    case "bf-car":
+                    case "mean":
                         menuBG.loadGraphic('BG1');
 				        menuBG.color = 0xFF00FF;
                     default:
