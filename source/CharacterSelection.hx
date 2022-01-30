@@ -26,12 +26,13 @@ typedef CharacterMenu = {
 
 class CharacterSelection extends MusicBeatState
 {
-    var menuItems:Array<String> = ['bf', 'beta', 'blue', 'mean'];
+    var menuItems:Array<String> = [];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
 	var shitCharacterBetter:Boyfriend;
     var icon:HealthIcon;
+    var color:FlxColor;
     var menuBG:FlxSprite;
     public var tagertY:Float = 0;
     var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
@@ -40,6 +41,7 @@ class CharacterSelection extends MusicBeatState
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var nameIcons:Array<String> = [];
+    var nameColors:Array<String> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
@@ -68,7 +70,11 @@ class CharacterSelection extends MusicBeatState
         grpMenuImage = new FlxTypedGroup<FlxSprite>();
         add(grpMenuImage);
 
+        menuItems = CoolUtil.coolTextFile(Paths.txt('charSelect'));
+
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
+
+        nameColors = CoolUtil.coolTextFile(Paths.txt('colors));
 
         for (i in 0...menuItems.length)
         {
@@ -86,6 +92,8 @@ class CharacterSelection extends MusicBeatState
             //Using a FlxGroup is too much fuss!
             iconArray.push(icon);
             add(icon);
+
+            if (menuItems[i].x = 470 - (menuItems[i].x / i+1);(FlxG.width/2) * (curSelected + i) - (FlxG.width/2) * (curSelected + i))
         }
 
         txtDescription = new FlxText(FlxG.width * 0.075, menuBG.y + 200, 0, "", 32);
@@ -99,8 +107,8 @@ class CharacterSelection extends MusicBeatState
         //shitCharacter.scale.set(0.45, 0.45);
 		//shitCharacter.updateHitbox();
 		//shitCharacter.screenCenter(X);
-                //shitCharacter.x += 250;
-                //shitCharacter.y += 30;
+                //shitCharacter.x += 500;
+                //shitCharacter.y += 230;
 		//shitCharacter.antialiasing = true;
 		//add(shitCharacter);
 
@@ -139,6 +147,9 @@ class CharacterSelection extends MusicBeatState
                 trace('');
                 txtOptionTitle.text = '';
             }
+
+        if (iconArray[curSelected].animation.curAnim.name == 'idle' && iconArray[curSelected].animation.curAnim.finished && doesntExist)
+            iconArray[curSelected].playAnim('idle', true);
 
         var upP = controls.UI_LEFT_P;
         var downP = controls.UI_RIGHT_P;
@@ -184,10 +195,10 @@ class CharacterSelection extends MusicBeatState
         {
             curSelected += change;
 
-            if (curSelected < 0)
-                curSelected = menuItems.length - 1;
             if (curSelected >= menuItems.length)
                 curSelected = 0;
+            if (curSelected < 0)
+                curSelected = menuItems.length - 1;
 
             var otherInt:Int = 0;
 
@@ -198,19 +209,17 @@ class CharacterSelection extends MusicBeatState
             
             iconArray[curSelected].alpha = 1;
 
-            var otherInt:Int = 0;
             for (item in grpMenu.members)
                 {
                     item.targetY = otherInt - curSelected;
                     otherInt++;
 
-                    item.alpha = 0.6;
+                    item.alpha = 0;
                     //item.setGraphicSize(Std.int(item.width * 0.8));
 
                     if (item.targetY == 0)
                         {
-                            item.alpha = 1;
-                            //item.setGraphicSize(Std.int(item.width));
+                            // item.setGraphicSize(Std.int(item.width));
                         }
                 }
             
@@ -224,24 +233,7 @@ class CharacterSelection extends MusicBeatState
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
 
-                switch (daSelected)
-                {
-                    case "bf":
-                        menuBG.loadGraphic('BG1');
-                        menuBG.color = 0x87ceeb;
-                    case "beta":
-                        menuBG.loadGraphic('BG2');
-                        menuBG.color = 0xFFFFFF;
-                    case "blue":
-                        menuBG.loadGraphic('BG3');
-	    			        menuBG.color = 0xFF00FF;
-                    case "mean":
-                        menuBG.loadGraphic('BG1');
-				        menuBG.color = 0xFF00FF;
-                    default:
-                        menuBG.loadGraphic('BG4');
-				        menuBG.color = 0xFFFFFF;
-                }
+                color:FlxColor =(nameColors[curSelected], true);
 
                 //shitCharacter.updateHitbox();
 		        //shitCharacter.screenCenter(X);
