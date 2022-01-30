@@ -194,7 +194,7 @@ class CharacterSelection extends MusicBeatState
 
             for (i in 0...menuItems.length)
                 {
-                    if(menuItems[i].x = 470 - (menuItems[i].x / i+1) * (FlxG.width/2) * (curSelected + i) * (FlxG.width/2) * (curSelected + i));
+                    menuItems[i].x = 470 - (menuItems[i].x / i+1) * (FlxG.width/2) * (curSelected + i) * (FlxG.width/2) * (curSelected + i);
                 }
 
             curSelected += change;
