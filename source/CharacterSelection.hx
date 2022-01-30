@@ -93,7 +93,7 @@ class CharacterSelection extends MusicBeatState
             iconArray.push(icon);
             add(icon);
 
-            if (menuItems[i].x = 470 - (menuItems[i].x / i+1);(FlxG.width/2) * (curSelected + i) - (FlxG.width/2) * (curSelected + i))
+            if (menuItems[i].x = 470 - (menuItems[i].x / i+1));(FlxG.width/2) * (curSelected + i) - (FlxG.width/2) * (curSelected + i));
         }
 
         txtDescription = new FlxText(FlxG.width * 0.075, menuBG.y + 200, 0, "", 32);
