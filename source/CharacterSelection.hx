@@ -41,8 +41,7 @@ class CharacterSelection extends MusicBeatState
 
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
-    var color:Array<Int> = [];
-    var nameColors:Array<String> = [];
+    var color:Int = -7179779;
     var nameIcons:Array<String> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
@@ -73,9 +72,12 @@ class CharacterSelection extends MusicBeatState
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
-        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
-
         names = CoolUtil.coolTextFile(Paths.txt('names'));
+
+        for (i in 0...nameColors.length)
+        {
+            var nameColors[i] = CoolUtil.coolTextFile(Paths.txt('colors'));
+        }
 
         for (i in 0...menuItems.length)
         {
