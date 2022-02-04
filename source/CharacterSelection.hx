@@ -51,7 +51,6 @@ class CharacterSelection extends MusicBeatState
     var names:Array<String> = [];
     var intendedColor:Int;
     var colorTween:FlxTween;
-    public var color:Int = -7179779;
 
     var txtOptionTitle:FlxText;
 
@@ -130,6 +129,7 @@ class CharacterSelection extends MusicBeatState
         add(txtOptionTitle);
 
         if(curSelected >= menuItems.length) curSelected = 0;
+        nameColors = color;
 	menuBG.color = menuItems[curSelected].color;
 	intendedColor = menuBG.color;
         changeSelection();
