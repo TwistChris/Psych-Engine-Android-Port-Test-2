@@ -48,6 +48,9 @@ class CharacterSelection extends MusicBeatState
     private var iconArray:Array<Boyfriend> = [];
 
     var names:Array<String> = [];
+    var intendedColor:Int;
+    var colorTween:FlxTween;
+    public var color:Int = -7179779;
 
     var txtOptionTitle:FlxText;
 
@@ -62,12 +65,6 @@ class CharacterSelection extends MusicBeatState
  
         nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
-        for (i in 0...nameColors.length)
-        {
-            yellowBG = new FlxSprite().makeGraphic(FlxG.width, 455, FlxColor.fromRGB(nameColors[i]));
-            add(yellowBG);
-        }
-
         grpMenu = new FlxTypedGroup<Alphabet>();
         add(grpMenu);
 
@@ -77,6 +74,8 @@ class CharacterSelection extends MusicBeatState
         menuItems = CoolUtil.coolTextFile(Paths.txt('charSelect'));
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
+
+        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
         names = CoolUtil.coolTextFile(Paths.txt('names'));
 
@@ -129,6 +128,10 @@ class CharacterSelection extends MusicBeatState
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
+
+        if(curSelected >= menuItems.length) curSelected = 0;
+	menuBG.color = menuItems[curSelected].color;
+	intendedColor = menuBG.color;
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
@@ -207,6 +210,19 @@ class CharacterSelection extends MusicBeatState
                 curSelected = 0;
             if (curSelected < 0)
                 curSelected = menuItems.length - 1;
+
+            var newColor:Int = menuItems[curSelected].color;
+		if(newColor != intendedColor) {
+			if(colorTween != null) {
+				colorTween.cancel();
+			}
+			intendedColor = newColor;
+			colorTween = FlxTween.color(menuBG, 1, menuBG.color, intendedColor, {
+				onComplete: function(twn:FlxTween) {
+					colorTween = null;
+				}
+			});
+		}
 
             var otherInt:Int = 0;
 
