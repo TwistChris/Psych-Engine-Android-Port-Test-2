@@ -62,7 +62,7 @@ class CharacterSelection extends MusicBeatState
  
         nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
-        yellowBG = new FlxSprite().makeGraphic(FlxG.width, 455, FlxColor.fromRGB(nameColors));
+        yellowBG = new FlxSprite(0, 56).makeGraphic(FlxG.width, 455, FlxColor.fromRGB(nameColors));
         add(yellowBG);
 
         grpMenu = new FlxTypedGroup<Alphabet>();
@@ -237,9 +237,6 @@ class CharacterSelection extends MusicBeatState
                 var daSelected:String = menuItems[curSelected];
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
-
-                yellowBG.color = nameColors[curSelected];
-                add(yellowBG.color);
 
                 //shitCharacter.updateHitbox();
 		        //shitCharacter.screenCenter(X);
