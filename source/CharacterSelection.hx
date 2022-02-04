@@ -62,8 +62,6 @@ class CharacterSelection extends MusicBeatState
         menuBG.screenCenter();
         menuBG.antialiasing = true;
         add(menuBG);
- 
-        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
         grpMenu = new FlxTypedGroup<Alphabet>();
         add(grpMenu);
