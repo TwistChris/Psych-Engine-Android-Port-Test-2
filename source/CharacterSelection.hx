@@ -62,8 +62,11 @@ class CharacterSelection extends MusicBeatState
  
         nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
-        yellowBG = new FlxSprite(0, 56).makeGraphic(FlxG.width, 455, FlxColor.fromRGB(nameColors));
-        add(yellowBG);
+        for (i in 0...nameColors.length)
+        {
+            yellowBG = new FlxSprite().makeGraphic(FlxG.width, 455, FlxColor.fromRGB(nameColors[i]));
+            add(yellowBG);
+        }
 
         grpMenu = new FlxTypedGroup<Alphabet>();
         add(grpMenu);
