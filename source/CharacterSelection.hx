@@ -279,6 +279,7 @@ class CharacterSelection extends MusicBeatState
                 icon.y -= 20;
                 add(icon); 
             }
+}
 
 class CharSelect
 {
