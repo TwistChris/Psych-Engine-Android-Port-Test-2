@@ -142,7 +142,7 @@ class CharacterSelection extends MusicBeatState
 
     public function addColor(color:Int)
     {
-        MenuItems.push(new SongMetadata(color)
+        menuItems.push(new SongMetadata(color));
     }
 
     override function update(elapsed:Float) 
