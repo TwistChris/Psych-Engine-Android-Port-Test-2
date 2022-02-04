@@ -280,7 +280,7 @@ class CharacterSelection extends MusicBeatState
                 add(icon); 
             }
 
-class SongMetadata
+class CharSelect
 {
         public var color:Int = -7179779;
 
