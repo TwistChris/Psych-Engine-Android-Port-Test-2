@@ -82,9 +82,11 @@ class CharacterSelection extends MusicBeatState
         var menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
         for (i in 0...menuItems.length)
         {
-            if(menuItems[i] != null && menuItems[i].length > 0) {
+            if(menuItems[i] != null && menuItems[i].length > 0) 
+            {
 	    var charArray:Array<String> = menuItems[i].split(":");
 	    addColor(charArray[0], 0, charArray[1], Std.parseInt(charArray[2]));
+            }
   
             var songText:Alphabet = new Alphabet(170, (70 * i) + 230, menuItems[i], true, false);
             songText.isMenuItem = true;
