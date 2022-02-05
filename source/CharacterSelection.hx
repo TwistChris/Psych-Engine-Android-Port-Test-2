@@ -29,7 +29,6 @@ class CharacterSelection extends MusicBeatState
 {
     var char:Array<CharSelect> = [];
 
-    var menuItems:Array<String> = [];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
@@ -80,8 +79,13 @@ class CharacterSelection extends MusicBeatState
             var nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
         }
 
+        var menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
         for (i in 0...menuItems.length)
         {
+            if(menuItems[i] != null && menuItems[i].length > 0) {
+	    var charArray:Array<String> = menuItems[i].split(":");
+	    addSong(charArray[0], 0, charArray[1], Std.parseInt(charArray[2]));
+  
             var songText:Alphabet = new Alphabet(170, (70 * i) + 230, menuItems[i], true, false);
             songText.isMenuItem = true;
             songText.targetY = i;
