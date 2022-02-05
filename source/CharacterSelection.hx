@@ -66,9 +66,7 @@ class CharacterSelection extends MusicBeatState
         add(grpMenu);
 
         grpMenuImage = new FlxTypedGroup<FlxSprite>();
-        add(grpMenuImage);
-
-        menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
+        add(grpMenuImage)
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
@@ -287,6 +285,11 @@ class CharacterSelection extends MusicBeatState
 class CharSelect
 {
         public var color:Int = -7179779;
+
+        override function create() 
+        {
+                menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
+        }
 
         public function new(color:Int)
         {
