@@ -84,7 +84,7 @@ class CharacterSelection extends MusicBeatState
         {
             if(menuItems[i] != null && menuItems[i].length > 0) {
 	    var charArray:Array<String> = menuItems[i].split(":");
-	    addSong(charArray[0], 0, charArray[1], Std.parseInt(charArray[2]));
+	    addColor(charArray[0], 0, charArray[1], Std.parseInt(charArray[2]));
   
             var songText:Alphabet = new Alphabet(170, (70 * i) + 230, menuItems[i], true, false);
             songText.isMenuItem = true;
@@ -146,6 +146,11 @@ class CharacterSelection extends MusicBeatState
         #end
 
         super.create();
+    }
+
+    public function addColor(color:Int)
+    {
+        menuItems.push(new CharSelect(color));
     }
 
     override function update(elapsed:Float) 
