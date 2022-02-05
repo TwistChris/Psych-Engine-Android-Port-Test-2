@@ -3,9 +3,9 @@ package;
 #if desktop
 import Discord.DiscordClient;
 #end
-import CharacterSelection.CharSelect;
 import Section.SwagSection;
 import Song.SwagSong;
+import CharacterSelection.CharSelect;
 import WiggleEffect.WiggleEffectType;
 import flixel.FlxBasic;
 import flixel.FlxCamera;
@@ -126,9 +126,7 @@ class PlayState extends MusicBeatState
 	public static var storyWeek:Int = 0;
 	public static var storyPlaylist:Array<String> = [];
 	public static var storyDifficulty:Int = 1;
-
         public static var hasPlayedOnce:Bool = false;
-
         public static var bfsel:CharSelect = '';
 
         var bfcansing:Bool = true;
