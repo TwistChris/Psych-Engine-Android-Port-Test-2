@@ -72,11 +72,6 @@ class CharacterSelection extends MusicBeatState
 
         names = CoolUtil.coolTextFile(Paths.txt('names'));
 
-        for (i in 0...nameColors.length)
-        {
-            var nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
-        }
-
         var menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
         for (i in 0...menuItems.length)
         {
@@ -134,7 +129,6 @@ class CharacterSelection extends MusicBeatState
         add(txtOptionTitle);
 
         if(curSelected >= menuItems.length) curSelected = 0;
-        nameColors = color;
 	menuBG.color = menuItems[curSelected].color;
 	intendedColor = menuBG.color;
         changeSelection();
