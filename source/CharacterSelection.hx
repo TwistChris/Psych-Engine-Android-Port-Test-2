@@ -29,7 +29,7 @@ class CharacterSelection extends MusicBeatState
 {
     var menuItems:Array<CharSelect> = [];
 
-    var curSelected:Int = 0;
+    private static var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
 	var shitCharacterBetter:Boyfriend;
