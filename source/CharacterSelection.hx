@@ -252,7 +252,7 @@ class CharacterSelection extends MusicBeatState
         function charCheck()
             {
                 doesntExist = false;
-                var daSelected:String = menuItems[curSelected];
+                var daSelected:CharSelect = menuItems[curSelected];
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
 
