@@ -68,8 +68,6 @@ class CharacterSelection extends MusicBeatState
         grpMenuImage = new FlxTypedGroup<FlxSprite>();
         add(grpMenuImage);
     
-        menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
-
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
         names = CoolUtil.coolTextFile(Paths.txt('names'));
