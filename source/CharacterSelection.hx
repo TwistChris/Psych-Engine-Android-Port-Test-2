@@ -148,8 +148,8 @@ class CharacterSelection extends MusicBeatState
         super.create();
     }
 
-    public function addColor(color:Int)
-    {
+    public function addColor(color:Int){
+
         menuItems.push(new CharSelect(color));
     }
 
