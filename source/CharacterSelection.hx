@@ -27,8 +27,9 @@ typedef CharacterMenu = {
 
 class CharacterSelection extends MusicBeatState
 {
-    var menuItems:Array<CharSelect> = [];
+    var char:Array<CharSelect> = [];
 
+    var menuItems:Array<String> = [];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
@@ -67,6 +68,8 @@ class CharacterSelection extends MusicBeatState
 
         grpMenuImage = new FlxTypedGroup<FlxSprite>();
         add(grpMenuImage);
+    
+        menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
@@ -285,11 +288,6 @@ class CharacterSelection extends MusicBeatState
 class CharSelect
 {
         public var color:Int = -7179779;
-
-        override function create() 
-        {
-                menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
-        }
 
         public function new(color:Int)
         {
