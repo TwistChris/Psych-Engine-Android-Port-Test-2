@@ -3,6 +3,7 @@ package;
 #if desktop
 import Discord.DiscordClient;
 #end
+import CharacterSelection.CharSelect;
 import Section.SwagSection;
 import Song.SwagSong;
 import WiggleEffect.WiggleEffectType;
@@ -128,7 +129,7 @@ class PlayState extends MusicBeatState
 
         public static var hasPlayedOnce:Bool = false;
 
-        public static var bfsel:String = '';
+        public static var bfsel:CharSelect = '';
 
         var bfcansing:Bool = true;
 	var dadcansing:Bool = true;
