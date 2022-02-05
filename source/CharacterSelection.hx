@@ -141,6 +141,11 @@ class CharacterSelection extends MusicBeatState
         super.create();
     }
 
+    public function addColor(color:Int)
+    {
+        menuItems.push(new CharSelect(color));
+    }
+
     override function update(elapsed:Float) 
     {
         txtOptionTitle.text = names[curSelected].toUpperCase();
@@ -175,8 +180,7 @@ class CharacterSelection extends MusicBeatState
                     alreadySelected = true;
                     var daSelected:CharSelect = menuItems[curSelected];
                     PlayState.hasPlayedOnce = true;
-                    if (menuItems[curSelected] != 'bf')
-                        PlayState.bfsel = daSelected;
+                        PlayState.bfsel = menuItems[curSelected;
 
                     FlxFlicker.flicker(iconArray[curSelected], 0);
                     new FlxTimer().start(1, function(tmr:FlxTimer)
