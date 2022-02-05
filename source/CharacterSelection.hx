@@ -27,7 +27,7 @@ typedef CharacterMenu = {
 
 class CharacterSelection extends MusicBeatState
 {
-    var menuItems:Array<String> = [];
+    var menuItems:Array<CharSelect> = [];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
@@ -41,7 +41,6 @@ class CharacterSelection extends MusicBeatState
 
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
-    var color:Int = -7179779;
     var nameIcons:Array<String> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
@@ -282,4 +281,15 @@ class CharacterSelection extends MusicBeatState
                 icon.y -= 20;
                 add(icon); 
             }
+}
+
+class CharSelect
+{
+        public var color:Int = -7179779;
+
+        public function new(color:Int)
+        {
+                this.color = color;
+        }
+
 }
