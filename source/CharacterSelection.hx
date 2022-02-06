@@ -103,7 +103,6 @@ class CharacterSelection extends MusicBeatState
              var colo:FlxColor = coloArray[i];
 
              coloArray.push(colo);
-             add(colo);
         }
 
         txtDescription = new FlxText(FlxG.width * 0.075, menuBG.y + 200, 0, "", 32);
