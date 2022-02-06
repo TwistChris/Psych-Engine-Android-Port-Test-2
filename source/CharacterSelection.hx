@@ -35,6 +35,7 @@ class CharacterSelection extends MusicBeatState
     var shitCharacter:FlxSprite;
 	var shitCharacterBetter:Boyfriend;
     var icon:HealthIcon;
+    var colo:HealthIcon;
     var menuBG:FlxSprite;
     var yellowBG:FlxSprite;
     public var tagertY:Float = 0;
@@ -47,6 +48,7 @@ class CharacterSelection extends MusicBeatState
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
+    private var coloArray:Array<FlxColor> = [];
 
     var names:Array<String> = [];
     var intendedColor:Int;
@@ -75,6 +77,8 @@ class CharacterSelection extends MusicBeatState
         
         menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
 
+        coloArray = CoolUtil.coolTextFile(Paths.txt('colors'));
+
         for (i in 0...menuItems.length)
         {
             var songText:Alphabet = new Alphabet(170, (70 * i) + 230, menuItems[i], true, false);
@@ -91,6 +95,14 @@ class CharacterSelection extends MusicBeatState
             //Using a FlxGroup is too much fuss!
             iconArray.push(icon);
             add(icon);
+        }
+
+        for (i in 0...coloArray.length)
+        {
+             var color:FlxColor = coloArray[i];
+
+             coloArray.push(icon);
+             add(color);
         }
 
         txtDescription = new FlxText(FlxG.width * 0.075, menuBG.y + 200, 0, "", 32);
@@ -198,6 +210,11 @@ class CharacterSelection extends MusicBeatState
                     iconArray[i].x = 470 - (iconArray[i].x / i+1) * (FlxG.width/2) * (curSelected + i) * (FlxG.width/2) * (curSelected + i);
                 }
 
+            for (i in 0...coloArray.length)
+                {
+                    coloArray[i].x = 470 - (coloArray[i].x / i+1) * (FlxG.width/2) * (curSelected + i) * (FlxG.width/2) * (curSelected + i);
+                }
+
             curSelected += change;
 
             if (curSelected >= menuItems.length)
@@ -226,6 +243,13 @@ class CharacterSelection extends MusicBeatState
                 }
             
             iconArray[curSelected].alpha = 1;
+
+            for (i in 0...coloArray.length)
+                {
+                    coloArray[i].alpha = 1;
+                }
+            
+            coloArray[curSelected].alpha = 1;
 
             for (item in grpMenu.members)
                 {
@@ -275,6 +299,10 @@ class CharacterSelection extends MusicBeatState
                 icon.setGraphicSize(-4);
                 icon.y -= 20;
                 add(icon); 
+  
+                colo = new HealthIcon(coloArray[curSelected], true);
+                add(colo); 
+
             }
 }
 
