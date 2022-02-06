@@ -35,7 +35,7 @@ class CharacterSelection extends MusicBeatState
     var shitCharacter:FlxSprite;
 	var shitCharacterBetter:Boyfriend;
     var icon:HealthIcon;
-    var colo:FlxColor;
+    var colo:String;
     var menuBG:FlxSprite;
     var yellowBG:FlxSprite;
     public var tagertY:Float = 0;
@@ -295,7 +295,7 @@ class CharacterSelection extends MusicBeatState
                 icon.y -= 20;
                 add(icon); 
   
-                colo = new FlxColor(nameColors[curSelected]);
+                colo = (nameColors[curSelected]);
             }
 }
 
