@@ -127,7 +127,7 @@ class PlayState extends MusicBeatState
 	public static var storyPlaylist:Array<String> = [];
 	public static var storyDifficulty:Int = 1;
         public static var hasPlayedOnce:Bool = false;
-        public static var bfsel:CharSelect = '';
+        public static var bfsel:Array<CharSelect> = [];
 
         var bfcansing:Bool = true;
 	var dadcansing:Bool = true;
