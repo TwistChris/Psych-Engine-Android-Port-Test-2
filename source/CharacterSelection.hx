@@ -35,7 +35,7 @@ class CharacterSelection extends MusicBeatState
     var shitCharacter:FlxSprite;
 	var shitCharacterBetter:Boyfriend;
     var icon:HealthIcon;
-    var colo:HealthIcon;
+    var colo:FlxColor;
     var menuBG:FlxSprite;
     var yellowBG:FlxSprite;
     public var tagertY:Float = 0;
@@ -99,10 +99,10 @@ class CharacterSelection extends MusicBeatState
 
         for (i in 0...coloArray.length)
         {
-             var color:FlxColor = coloArray[i];
+             var colo:FlxColor = coloArray[i];
 
              coloArray.push(icon);
-             add(color);
+             add(colo);
         }
 
         txtDescription = new FlxText(FlxG.width * 0.075, menuBG.y + 200, 0, "", 32);
