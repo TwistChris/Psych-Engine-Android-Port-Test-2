@@ -296,7 +296,6 @@ class CharacterSelection extends MusicBeatState
                 add(icon); 
   
                 colo = nameColors[curSelected];
-
             }
 }
 
