@@ -248,7 +248,8 @@ class CharacterSelection extends MusicBeatState
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
 
-                switch (daSelected){
+                switch (daSelected)
+                {
                         boyfriend = new Boyfriend(0, 0, menuItems[curSelected]);
                         startCharacterPos(boyfriend);
 		        boyfriendGroup.add(boyfriend);
