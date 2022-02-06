@@ -758,34 +758,12 @@ class PlayState extends MusicBeatState
 			gf.visible = false;
 		}
 
-                CharacterSelection.daSelected = bfsel;
+                CharacterSelection.menuItems = nameChar;
 
-                switch bfsel{
-			case "bf":
-				boyfriend = new Boyfriend(0, 0, SONG.player1);
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-				trace("beta!");
-			case "bf-christmas":
-				boyfriend = new Boyfriend(0, 0, 'bf-christmas');
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-				trace("blue!");
-			case "torch":
-				boyfriend = new Boyfriend(0, 0, 'blue');
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-				trace("mean!");
-                        case "bf-car":
-				boyfriend = new Boyfriend(0, 0, 'bf-car');
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-				trace("beta!");
-			default:
-				trace("default!");
-				boyfriend = new Boyfriend(0, 0, SONG.player1);
-                                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
+                bfsel{
+			boyfriend = new Boyfriend(0, 0, nameChar);
+                        startCharacterPos(boyfriend);
+		        boyfriendGroup.add(boyfriend);
 		}
 
 		switch(curStage)
