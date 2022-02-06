@@ -208,19 +208,6 @@ class CharacterSelection extends MusicBeatState
             if (curSelected < 0)
                 curSelected = menuItems.length - 1;
 
-            var newColor:Int = charSelect[curSelected].color;
-		if(newColor != intendedColor) {
-			if(colorTween != null) {
-				colorTween.cancel();
-			}
-			intendedColor = newColor;
-			colorTween = FlxTween.color(menuBG, 1, menuBG.color, intendedColor, {
-				onComplete: function(twn:FlxTween) {
-					colorTween = null;
-				}
-			});
-		}
-
             var otherInt:Int = 0;
 
             for (i in 0...iconArray.length)
