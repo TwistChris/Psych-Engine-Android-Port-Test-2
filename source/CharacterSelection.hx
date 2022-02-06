@@ -77,7 +77,7 @@ class CharacterSelection extends MusicBeatState
         
         menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
 
-        coloArray = CoolUtil.coolTextFile(Paths.txt('colors'));
+        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
         for (i in 0...menuItems.length)
         {
@@ -300,7 +300,7 @@ class CharacterSelection extends MusicBeatState
                 icon.y -= 20;
                 add(icon); 
   
-                colo = new HealthIcon(coloArray[curSelected], true);
+                colo = new FlxColor(nameColors[curSelected]);
                 add(colo); 
 
             }
