@@ -30,7 +30,7 @@ class CharacterSelection extends MusicBeatState
     var charSelect:Array<CharSelect> = [];
 
     var menuItems:Array<String> = [];
-    private static var curSelected:Int = 0;
+    var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
 	var shitCharacterBetter:Boyfriend;
@@ -44,7 +44,6 @@ class CharacterSelection extends MusicBeatState
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var nameIcons:Array<String> = [];
-    var nameColors:Array<CharSelect> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
@@ -72,7 +71,7 @@ class CharacterSelection extends MusicBeatState
     
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
-        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
+        var nameColors:CharSelect = CoolUtil.coolTextFile(Paths.txt('colors'));
 
         names = CoolUtil.coolTextFile(Paths.txt('names'));
         
