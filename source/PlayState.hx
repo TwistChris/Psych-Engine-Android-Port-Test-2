@@ -760,7 +760,7 @@ class PlayState extends MusicBeatState
 
                 CharacterSelection.menuItems = nameChar;
 
-                bfsel{
+                (bfsel){
 			boyfriend = new Boyfriend(0, 0, nameChar);
                         startCharacterPos(boyfriend);
 		        boyfriendGroup.add(boyfriend);
