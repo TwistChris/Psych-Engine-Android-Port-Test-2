@@ -45,7 +45,7 @@ class CharacterSelection extends MusicBeatState
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var nameIcons:Array<String> = [];
-    var nameColors:Array<String> = [];
+    var nameColors:Array<Int> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
@@ -295,7 +295,7 @@ class CharacterSelection extends MusicBeatState
                 icon.y -= 20;
                 add(icon); 
   
-                colo = nameColors[curSelected];
+                colo = new FlxColor(nameColors[curSelected]);
             }
 }
 
