@@ -5,6 +5,7 @@ import Discord.DiscordClient;
 #end
 import Section.SwagSection;
 import Song.SwagSong;
+import CharacterSelection.menuItems;
 import WiggleEffect.WiggleEffectType;
 import flixel.FlxBasic;
 import flixel.FlxCamera;
@@ -758,11 +759,9 @@ class PlayState extends MusicBeatState
 			gf.visible = false;
 		}
 
-                CharacterSelection.menuItems = nameChar;
-
                 (bfsel)
                 {
-			boyfriend = new Boyfriend(0, 0, nameChar);
+			boyfriend = new Boyfriend(0, 0, 'menuItems');
                         startCharacterPos(boyfriend);
 		        boyfriendGroup.add(boyfriend);
 		}
