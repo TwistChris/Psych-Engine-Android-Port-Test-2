@@ -148,6 +148,11 @@ class CharacterSelection extends MusicBeatState
         super.create();
     }
 
+    public function addColor(color:Int)
+    {
+        nameColors.push(new CharSelect(color));
+    }
+
     override function update(elapsed:Float) 
     {
         txtOptionTitle.text = names[curSelected].toUpperCase();
