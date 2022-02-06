@@ -45,6 +45,7 @@ class CharacterSelection extends MusicBeatState
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var nameIcons:Array<String> = [];
+    var nameColors:Array<String> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
@@ -274,6 +275,7 @@ class CharacterSelection extends MusicBeatState
                 var daSelected:String = menuItems[curSelected];
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
+                remove(colo);
 
                 //shitCharacter.updateHitbox();
 		        //shitCharacter.screenCenter(X);
