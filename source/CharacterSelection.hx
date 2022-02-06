@@ -172,10 +172,10 @@ class CharacterSelection extends MusicBeatState
             if (accepted)
                 {
                     alreadySelected = true;
-                    var daSelected:String = menuItems[curSelected];
+                    var selected:String = menuItems[curSelected];
                     PlayState.hasPlayedOnce = true;
                     if (menuItems[curSelected] != 'bf')
-                        PlayState.bfsel = daSelected;
+                        PlayState.bfsel = selected;
 
                     FlxFlicker.flicker(iconArray[curSelected], 0);
                     new FlxTimer().start(1, function(tmr:FlxTimer)
@@ -244,12 +244,11 @@ class CharacterSelection extends MusicBeatState
         function charCheck()
             {
                 doesntExist = false;
-                var daSelected:String = menuItems[curSelected];
+                var selected:String = menuItems[curSelected];
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
 
-                switch (daSelected)
-                {
+                selected = {
                         boyfriend = new Boyfriend(0, 0, menuItems[curSelected]);
                         startCharacterPos(boyfriend);
 		        boyfriendGroup.add(boyfriend);
