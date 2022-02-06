@@ -27,8 +27,9 @@ typedef CharacterMenu = {
 
 class CharacterSelection extends MusicBeatState
 {
-    var menuItems:Array<CharSelect> = [];
+    var charSelect:Array<CharSelect> = [];
 
+    var menuItems:Array<String> = [];
     private static var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
@@ -129,7 +130,7 @@ class CharacterSelection extends MusicBeatState
         add(txtOptionTitle);
 
         if(curSelected >= menuItems.length) curSelected = 0;
-        menuBG.color = menuItems[curSelected].color;
+        menuBG.color = charSelect[curSelected].color;
 	intendedColor = menuBG.color;
         changeSelection();
 
@@ -179,9 +180,9 @@ class CharacterSelection extends MusicBeatState
             if (accepted)
                 {
                     alreadySelected = true;
-                    var daSelected:CharSelect = menuItems[curSelected];
+                    var daSelected:String = menuItems[curSelected];
                     PlayState.hasPlayedOnce = true;
-                    PlayState.bfsel = menuItems[curSelected];
+                        PlayState.bfsel = daSelected;
 
                     FlxFlicker.flicker(iconArray[curSelected], 0);
                     new FlxTimer().start(1, function(tmr:FlxTimer)
@@ -214,7 +215,7 @@ class CharacterSelection extends MusicBeatState
             if (curSelected < 0)
                 curSelected = menuItems.length - 1;
 
-            var newColor:Int = menuItems[curSelected].color;
+            var newColor:Int = charSelect[curSelected].color;
 		if(newColor != intendedColor) {
 			if(colorTween != null) {
 				colorTween.cancel();
