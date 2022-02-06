@@ -71,11 +71,18 @@ class CharacterSelection extends MusicBeatState
     
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
-        var nameColors:FlxColor = CoolUtil.coolTextFile2(Paths.txt('colors'));
-
         names = CoolUtil.coolTextFile(Paths.txt('names'));
         
         menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
+
+        var nameColors:FlxColor = CoolUtil.coolTextFile2(Paths.txt('colors'));
+        for (i in 0...nameColors.length)
+		{
+			if(nameColors[i] != null && nameColors[i].length > 0) {
+				var colorArray:Array<String> = nameColors[i]
+				addSong(Std.parseInt(colorArray[0]));
+			}
+		}
 
         for (i in 0...menuItems.length)
         {
