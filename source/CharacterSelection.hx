@@ -295,8 +295,7 @@ class CharacterSelection extends MusicBeatState
                 icon.y -= 20;
                 add(icon); 
   
-                colo = new FlxColor(nameColors[curSelected]);
-                add(colo); 
+                colo = nameColors[curSelected];
 
             }
 }
