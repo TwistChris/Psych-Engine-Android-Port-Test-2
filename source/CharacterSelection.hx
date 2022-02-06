@@ -252,7 +252,7 @@ class CharacterSelection extends MusicBeatState
                         boyfriend = new Boyfriend(0, 0, menuItems[curSelected]);
                         startCharacterPos(boyfriend);
 		        boyfriendGroup.add(boyfriend);
-                {
+                }
 
                 //shitCharacter.updateHitbox();
 		        //shitCharacter.screenCenter(X);
