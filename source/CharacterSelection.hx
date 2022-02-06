@@ -27,8 +27,6 @@ typedef CharacterMenu = {
 
 class CharacterSelection extends MusicBeatState
 {
-    var charSelect:Array<CharSelect> = [];
-
     var menuItems:Array<String> = [];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
@@ -37,7 +35,6 @@ class CharacterSelection extends MusicBeatState
     var icon:HealthIcon;
     var colo:String;
     var menuBG:FlxSprite;
-    var yellowBG:FlxSprite;
     public var tagertY:Float = 0;
     var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
     public static var characterShit:Array<CharacterMenu>;
@@ -52,8 +49,6 @@ class CharacterSelection extends MusicBeatState
     private var coloArray:Array<FlxColor> = [];
 
     var names:Array<String> = [];
-    var intendedColor:Int;
-    var colorTween:FlxTween;
 
     var txtOptionTitle:FlxText;
 
@@ -136,11 +131,6 @@ class CharacterSelection extends MusicBeatState
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
-        if(curSelected >= menuItems.length) curSelected = 0;
-        menuBG.color = charSelect[curSelected].color;
-	intendedColor = menuBG.color;
-        changeSelection();
-
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 
         #if mobileC
@@ -184,6 +174,7 @@ class CharacterSelection extends MusicBeatState
                     alreadySelected = true;
                     var daSelected:String = menuItems[curSelected];
                     PlayState.hasPlayedOnce = true;
+                    if (menuItems[curSelected] != 'bf')
                         PlayState.bfsel = daSelected;
 
                     FlxFlicker.flicker(iconArray[curSelected], 0);
@@ -297,15 +288,4 @@ class CharacterSelection extends MusicBeatState
   
                 colo = (nameColors[curSelected]);
             }
-}
-
-class CharSelect
-{
-        public var color:Int = -7179779;
-
-        public function new(color:Int)
-        {
-                this.color = color;
-        }
-
 }
