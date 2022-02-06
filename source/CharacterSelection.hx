@@ -79,7 +79,7 @@ class CharacterSelection extends MusicBeatState
         for (i in 0...nameColors.length)
 		{
 			if(nameColors[i] != null && nameColors[i].length > 0) {
-				var colorArray:Array<String> = nameColors[i]
+				var colorArray:Array<String> = nameColors[i];
 				addSong(Std.parseInt(colorArray[0]));
 			}
 		}
