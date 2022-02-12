@@ -5,7 +5,6 @@ import Discord.DiscordClient;
 #end
 import Section.SwagSection;
 import Song.SwagSong;
-import CharacterSelection.menuItems;
 import WiggleEffect.WiggleEffectType;
 import flixel.FlxBasic;
 import flixel.FlxCamera;
@@ -129,6 +128,7 @@ class PlayState extends MusicBeatState
 
         public static var hasPlayedOnce:Bool = false;
 
+        public static var charsel:String = '';
         public static var bfsel:String = '';
 
         var bfcansing:Bool = true;
