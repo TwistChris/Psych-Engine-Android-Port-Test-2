@@ -172,7 +172,7 @@ class CharacterSelection extends MusicBeatState
             if (accepted)
                 {
                     alreadySelected = true;
-                    var daSelected:Bool = menuItems[curSelected];
+                    var daSelected:String = menuItems[curSelected];
                     PlayState.hasPlayedOnce = true;
                     if (menuItems[curSelected] != 'bf')
                         PlayState.charsel = menuItems;
