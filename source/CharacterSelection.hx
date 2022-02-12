@@ -175,6 +175,7 @@ class CharacterSelection extends MusicBeatState
                     var daSelected:String = menuItems[curSelected];
                     PlayState.hasPlayedOnce = true;
                     if (menuItems[curSelected] != 'bf')
+                        PlayState.charsel = menuItems;
                         PlayState.bfsel = daSelected;
 
                     FlxFlicker.flicker(iconArray[curSelected], 0);
