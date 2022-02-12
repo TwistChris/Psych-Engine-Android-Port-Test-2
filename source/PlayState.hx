@@ -128,9 +128,6 @@ class PlayState extends MusicBeatState
 
         public static var hasPlayedOnce:Bool = false;
 
-        public static var charsel:String = '';
-        public static var bfsel:String = '';
-
         var bfcansing:Bool = true;
 	var dadcansing:Bool = true;
 	var gfcansing:Bool = false;
@@ -749,6 +746,10 @@ class PlayState extends MusicBeatState
 				dad2 = new Character(-90, 335, 'matt-final');
 				dadGroup.add(dad2);
 			}
+
+                boyfriend = new Boyfriend(0, 0, SONG.player1);
+		startCharacterPos(boyfriend);
+		boyfriendGroup.add(boyfriend);
 		
 		var camPos:FlxPoint = new FlxPoint(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 		camPos.x += gf.cameraPosition[0];
@@ -757,12 +758,6 @@ class PlayState extends MusicBeatState
 		if(dad.curCharacter.startsWith('gf')) {
 			dad.setPosition(GF_X, GF_Y);
 			gf.visible = false;
-		}
-
-                if(bfsel) {
-			boyfriend = new Boyfriend(0, 0, 'bfsel');
-                        startCharacterPos(boyfriend);
-		        boyfriendGroup.add(boyfriend);
 		}
 
 		switch(curStage)
