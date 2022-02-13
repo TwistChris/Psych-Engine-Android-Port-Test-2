@@ -252,7 +252,7 @@ class CharacterSelection extends MusicBeatState
                 healthBar.visible = false;
                 // healthBar
                 add(healthBar);
-                icon = new HealthIcon(menuItems[curSelected], true);
+                icon = new HealthIcon(nameIcons[curSelected], true);
                 icon.y = healthBar.y - (icon.height / 2);
                 icon.screenCenter(X);
                 icon.setGraphicSize(-4);
