@@ -238,6 +238,8 @@ class CharacterSelection extends MusicBeatState
 
         function charCheck()
             {
+                remove(icon);
+
                 doesntExist = true;
 
                 var healthBarBG:FlxSprite = new FlxSprite(0, FlxG.height * 0.9).loadGraphic('assets/shared/images/healthBar.png');
