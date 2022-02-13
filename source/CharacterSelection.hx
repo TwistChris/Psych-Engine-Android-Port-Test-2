@@ -90,6 +90,7 @@ class CharacterSelection extends MusicBeatState
             //DON'T PUT X IN THE FIRST PARAMETER OF new ALPHABET()!
             //songText.screenCenter(X);
             var icon:Boyfriend = new Boyfriend(0, 0, menuItems[i]);
+            icon.sprTracker = songText;
 
             icon.scale.set(0.8, 0.8);
 
