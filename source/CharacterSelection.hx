@@ -238,6 +238,7 @@ class CharacterSelection extends MusicBeatState
 
         function charCheck()
             {
+                var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
 
                 doesntExist = true;
