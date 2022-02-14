@@ -70,8 +70,10 @@ class CharacterSelection extends MusicBeatState
         for (i in 0...coloArray.length)
         {
              var colo:FlxColor = coloArray[i];
+             colo = 0xFFFFFF;
 
              coloArray.push(colo);
+             add(colo);
         }
 
         grpMenu = new FlxTypedGroup<Alphabet>();
