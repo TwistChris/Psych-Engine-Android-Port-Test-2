@@ -73,7 +73,6 @@ class CharacterSelection extends MusicBeatState
              colo = 0xFFFFFF;
 
              coloArray.push(colo);
-             add(colo);
         }
 
         grpMenu = new FlxTypedGroup<Alphabet>();
@@ -240,6 +239,7 @@ class CharacterSelection extends MusicBeatState
 
         function charCheck()
             {
+                doesntExist = false;
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
 
