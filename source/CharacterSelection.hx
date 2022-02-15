@@ -67,9 +67,9 @@ class CharacterSelection extends MusicBeatState
 
         nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
-        for (i in 0...coloArray.length)
+        for (i in 0...nameColors.length)
         {
-             var colo:FlxColor = coloArray[i];
+             var colo:FlxColor = nameColors[i];
              colo = 0xFFFFFF;
 
              coloArray.push(colo);
