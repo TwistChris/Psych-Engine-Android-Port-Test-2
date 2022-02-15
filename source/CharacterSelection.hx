@@ -69,8 +69,9 @@ class CharacterSelection extends MusicBeatState
 
         for (i in 0...nameColors.length)
         {
+
              var colo:FlxColor = nameColors[i];
-             colo = 0xFFFFFF;
+             nameColors[i] = 0xFFFFFF;
 
              coloArray.push(colo);
         }
