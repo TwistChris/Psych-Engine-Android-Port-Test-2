@@ -67,15 +67,6 @@ class CharacterSelection extends MusicBeatState
 
         nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
-        for (i in 0...nameColors.length)
-        {
-
-             var colo:FlxColor = nameColors[i];
-             nameColors[i] = 0xFFFFFF;
-
-             coloArray.push(colo);
-        }
-
         grpMenu = new FlxTypedGroup<Alphabet>();
         add(grpMenu);
 
