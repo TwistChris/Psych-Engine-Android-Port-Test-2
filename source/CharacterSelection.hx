@@ -234,6 +234,7 @@ class CharacterSelection extends MusicBeatState
                 doesntExist = false;
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
+                menuBG.color = nameColors;
 
                 doesntExist = true;
 
@@ -256,7 +257,5 @@ class CharacterSelection extends MusicBeatState
                 icon.setGraphicSize(-4);
                 icon.y -= 20;
                 add(icon); 
-
-                colo = (nameColors[curSelected]);
             }
 }
