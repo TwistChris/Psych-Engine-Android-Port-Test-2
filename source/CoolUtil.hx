@@ -48,7 +48,7 @@ class CoolUtil
 	public static function dominantColor(path:String):Array<String>
         {
 		var countByColor:Map<Int, Int> = [];
-		for(col in 0...sprite.frameWidth){
+		for(col in 0...path.frameWidth){
 			for(row in 0...sprite.frameHeight){
 			  var colorOfThisPixel:Int = sprite.pixels.getPixel32(col, row);
 			  if(colorOfThisPixel != 0){
