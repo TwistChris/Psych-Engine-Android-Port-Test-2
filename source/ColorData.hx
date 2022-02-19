@@ -5,13 +5,9 @@ import openfl.utils.Assets as OpenFlAssets;
 
 using StringTools;
 
-typedef ColorFile =
-{
-     var color:Int = -7179779;
-}
-
 class ColorData {
       public var color:Int = -7179779;
+
       public static function coolColorFile(path:String):Array<String>
       {
 		var daList:Array<String> = [];
