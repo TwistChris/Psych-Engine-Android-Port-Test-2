@@ -65,7 +65,7 @@ class CharacterSelection extends MusicBeatState
         
         menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
 
-        nameColors = ColorData.coolColorFile
+        nameColors = ColorData.coolColorFile;
 
         grpMenu = new FlxTypedGroup<Alphabet>();
         add(grpMenu);
