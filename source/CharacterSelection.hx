@@ -39,7 +39,7 @@ class CharacterSelection extends MusicBeatState
     public static var characterShit:Array<CharacterMenu>;
 
     private var grpMenu:FlxTypedGroup<Alphabet>;
-    private var grpMenuImage:FlxTypedGroup<FlxSprite>;
+    var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var nameIcons:Array<String> = [];
     var nameColors:Array<String> = [];
     var alreadySelected:Bool = false;
