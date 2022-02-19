@@ -18,8 +18,6 @@ import Character.Character;
 import HealthIcon.HealthIcon;
 import flixel.ui.FlxBar;
 
-using StringTools;
-
 typedef CharacterMenu = {
     var name:String;
     var characterName:String;
@@ -124,8 +122,6 @@ class CharacterSelection extends MusicBeatState
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
-        if(curSelected >= menuItems.length) curSelected = 0;
-        menuBG.color = CoolUtil.dominantColor(grpMenuImage[curSelected]);
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
