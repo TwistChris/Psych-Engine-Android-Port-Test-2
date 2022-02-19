@@ -2,6 +2,8 @@ package;
 
 import flixel.FlxG;
 import openfl.utils.Assets;
+import flixel.util.FlxColor;
+import flixel.FlxSprite;
 import lime.utils.Assets as LimeAssets;
 import lime.utils.AssetLibrary;
 import lime.utils.AssetManifest;
