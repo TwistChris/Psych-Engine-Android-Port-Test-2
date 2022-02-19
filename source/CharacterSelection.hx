@@ -17,7 +17,6 @@ import Boyfriend.Boyfriend;
 import Character.Character;
 import HealthIcon.HealthIcon;
 import flixel.ui.FlxBar;
-import FreeplayState.SongMetadata;
 
 typedef CharacterMenu = {
     var name:String;
@@ -42,7 +41,7 @@ class CharacterSelection extends MusicBeatState
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var nameIcons:Array<String> = [];
-    var nameColors:Array<SongMetadata> = [];
+    var nameColors:Array<String> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
@@ -123,6 +122,8 @@ class CharacterSelection extends MusicBeatState
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
+        if(curSelected >= songs.length) curSelected = 0;
+        menuBG.color = CoolUtil.dominantColor(nameColors[curSelected]);
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
@@ -235,7 +236,6 @@ class CharacterSelection extends MusicBeatState
                 doesntExist = false;
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
-                menuBG.color = nameColors[curSelected].color;
 
                 doesntExist = true;
 
