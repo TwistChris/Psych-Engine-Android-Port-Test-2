@@ -18,13 +18,13 @@ import Character.Character;
 import HealthIcon.HealthIcon;
 import flixel.ui.FlxBar;
 
+using StringTools;
+
 typedef CharacterMenu = {
     var name:String;
     var characterName:String;
     var portrait:String;
 }
-
-using StringTools;
 
 class CharacterSelection extends MusicBeatState
 {
