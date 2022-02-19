@@ -122,7 +122,7 @@ class CharacterSelection extends MusicBeatState
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
-        if(curSelected >= songs.length) curSelected = 0;
+        if(curSelected >= menuItems.length) curSelected = 0;
         menuBG.color = CoolUtil.dominantColor(nameColors[curSelected]);
         changeSelection();
 
