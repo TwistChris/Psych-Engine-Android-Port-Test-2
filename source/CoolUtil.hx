@@ -44,11 +44,10 @@ class CoolUtil
 
 		return daList;
 	}
-
-	public static function dominantColor(path:String):Array<String>
-        {
+        //get the most used color in an image
+	public static function dominantColor(sprite:FlxSprite):Int{
 		var countByColor:Map<Int, Int> = [];
-		for(col in 0...path.frameWidth){
+		for(col in 0...sprite.frameWidth){
 			for(row in 0...sprite.frameHeight){
 			  var colorOfThisPixel:Int = sprite.pixels.getPixel32(col, row);
 			  if(colorOfThisPixel != 0){
@@ -71,7 +70,7 @@ class CoolUtil
 		}
 		return maxKey;
 	}
-
+	
         public static function leastColor(sprite:FlxSprite) //return the least used color in an image
 	{
 		var countByColor:Map<Int, Int> = [];
