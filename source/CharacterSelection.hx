@@ -17,6 +17,7 @@ import Boyfriend.Boyfriend;
 import Character.Character;
 import HealthIcon.HealthIcon;
 import flixel.ui.FlxBar;
+import FreeplayState.SongMetadata;
 
 typedef CharacterMenu = {
     var name:String;
