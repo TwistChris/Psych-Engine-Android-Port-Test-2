@@ -8,7 +8,7 @@ using StringTools;
 class ColorData {
       public var color:Int = -7179779;
 
-      public static function coolColorFile(path:String):Array<String>
+      public static function coolColorFile(path:String):Array<ColorData>
       {
 		var daList:Array<String> = [];
 		if(Assets.exists(path)) daList = Assets.getText(path).trim().split('\n');
