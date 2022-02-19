@@ -45,7 +45,7 @@ class CoolUtil
 		return daList;
 	}
 
-	public static function dominantColor(sprite:FlxSprite):Int
+	public static function dominantColor(path:String):Array<String>
         {
 		var countByColor:Map<Int, Int> = [];
 		for(col in 0...sprite.frameWidth){
