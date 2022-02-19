@@ -42,7 +42,6 @@ class CoolUtil
 
 		return daList;
 	}
-
         //get the most used color in an image
 	public static function dominantColor(sprite:FlxSprite):Int{
 		var countByColor:Map<Int, Int> = [];
