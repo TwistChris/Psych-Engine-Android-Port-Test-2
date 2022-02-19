@@ -10,15 +10,7 @@ class ColorData {
 
       public static function coolColorFile(path:String):Array<String>
       {
-		var daList:Array<String> = [];
-		if(Assets.exists(path)) daList = Assets.getText(path).trim().split('\n');
-
-		for (i in 0...daList.length)
-		{
-			daList[i] = daList[i].trim();
-		}
-
-		return daList;
+		nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
       }
 
       public function new(color:Int)
