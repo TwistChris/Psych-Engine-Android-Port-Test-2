@@ -24,6 +24,8 @@ typedef CharacterMenu = {
     var portrait:String;
 }
 
+using StringTools;
+
 class CharacterSelection extends MusicBeatState
 {
     var menuItems:Array<String> = [];
