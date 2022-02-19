@@ -234,7 +234,7 @@ class CharacterSelection extends MusicBeatState
                 doesntExist = false;
                 var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
-                menuBG.color = nameColors[curSelected];
+                menuBG.color = nameColors[curSelected].color;
 
                 doesntExist = true;
 
