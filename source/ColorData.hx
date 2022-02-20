@@ -11,7 +11,7 @@ class ColorData {
 
       public static function coolColorFile(isCharSelect:Null<Bool> = false)
       {
-		var colorList:Array<String> = CoolUtil.coolTextFile(Paths.txt('colors'));
+		CoolUtil.coolTextFile(Paths.txt('colors'));
       }
 
       public function new(color:Int)
