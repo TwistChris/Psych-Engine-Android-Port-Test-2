@@ -9,7 +9,7 @@ class ColorData {
       var nameColors:Array<String> = [];
       public var color:Int = -7179779;
 
-      public static function coolColorFile(path:String):Array<String>
+      public static function coolColorFile(isCharSelect:Null<Bool> = false)
       {
 		var colorList:Array<String> = CoolUtil.coolTextFile(Paths.txt('colors'));
       }
