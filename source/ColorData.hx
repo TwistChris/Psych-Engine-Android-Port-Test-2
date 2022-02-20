@@ -10,7 +10,7 @@ class ColorData {
       public var color:Int = -7179779;
 
       public static function coolColorFile(data:ColorData = null); 
-      }
+      {
 		CoolUtil.coolTextFile(Paths.txt('colors'));
       }
 
