@@ -8,6 +8,7 @@ using StringTools;
 class ColorData {
       var nameColors:Array<String> = [];
       public var color:Int = -7179779;
+      public var colorfolder:String = "";
 
       public static function coolColorFile(path:String):Array<String>
       {
@@ -22,8 +23,9 @@ class ColorData {
 	      return daList;
       }
 
-      public static function colorColor(color:Int)
+      public function new(color:Int)
       {
 	      this.color = color;
+              this.colorfolder = 
       }
 }
