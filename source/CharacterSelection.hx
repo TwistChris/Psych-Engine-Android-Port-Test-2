@@ -41,7 +41,7 @@ class CharacterSelection extends MusicBeatState
     private var grpMenu:FlxTypedGroup<Alphabet>;
     var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var nameIcons:Array<String> = [];
-    private var nameColors:Array<ColorData> = [];
+    var nameColors:Array<String> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
@@ -59,7 +59,7 @@ class CharacterSelection extends MusicBeatState
         menuBG.antialiasing = true;
         add(menuBG);
 
-        nameColors = ColorData.coolColorFile(Paths.txt('colors'));
+        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
@@ -122,6 +122,8 @@ class CharacterSelection extends MusicBeatState
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
+        if(curSelected >= songs.length) curSelected = 0;
+        menuBG.color
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
