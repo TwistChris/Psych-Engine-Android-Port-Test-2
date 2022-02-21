@@ -23,10 +23,11 @@ class ColorData {
 	      return daList;
       }
 
-      public function new(color:Int)
+      public function new(color:Int, colorfolder:String<Array>)
       {
 	      this.color = color;
               this.colorfolder = CoolUtil.coolTextFile(Paths.txt('colors'));
+              this.colorfolder = colorfolder;
               if(this.colorfolder == null) this.colorfolder = [];
       }
 }
