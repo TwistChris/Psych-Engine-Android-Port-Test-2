@@ -26,6 +26,6 @@ class ColorData {
       public function new(color:Int)
       {
 	      this.color = color;
-              this.colorfolder = 
+              this.colorfolder = CoolUtil.coolTextFile(Paths.txt('colors'));
       }
 }
