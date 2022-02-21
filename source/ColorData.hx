@@ -22,7 +22,7 @@ class ColorData {
 	      return daList;
       }
 
-      public static function colorColor(color:Int)
+      public static function colorColor(color:Int):Array<String>
       {
 	      this.color = color;
       }
