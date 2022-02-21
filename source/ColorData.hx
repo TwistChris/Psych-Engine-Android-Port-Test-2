@@ -25,8 +25,9 @@ class ColorData {
 
       public function new(color:Int, colorfolder:String<Array>)
       {
+              var colorfolder = CoolUtil.coolTextFile(Paths.txt('colors'));
+
 	      this.color = color;
-              this.colorfolder = CoolUtil.coolTextFile(Paths.txt('colors'));
               this.colorfolder = colorfolder;
               if(this.colorfolder == null) this.colorfolder = [];
       }
