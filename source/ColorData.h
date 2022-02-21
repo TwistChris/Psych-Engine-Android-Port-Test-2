@@ -9,9 +9,16 @@ class ColorData {
       var nameColors:Array<String> = [];
       public var color:Int = -7179779;
 
-      public static function coolColorFile(data:ColorData = null) 
+      public static function coolColorFile(path:String):Array<ColorData>
       {
-		CoolUtil.coolTextFile(Paths.txt('colors'));
+		var daList:Array<String> = Assets.getText(path).trim().split('\n');
+
+		for (i in 0...daList.length)
+		{
+			daList[i] = daList[i].trim();
+		}
+
+		return daList;
       }
 
       public function new(color:Int)
