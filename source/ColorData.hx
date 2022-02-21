@@ -27,6 +27,6 @@ class ColorData {
       {
 	      this.color = color;
               this.colorfolder = CoolUtil.coolTextFile(Paths.txt('colors'));
-              if(this.colorfolder == null) this.colorfolder = '';
+              if(this.colorfolder == null) this.colorfolder = [];
       }
 }
