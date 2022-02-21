@@ -11,7 +11,7 @@ class ColorData {
 
       public static function coolColorFile(path:String):Array<ColorData>
       {
-		var daList:Array<String> = Assets.getText(path).trim().split('\n');
+		var daList:Array<ColorData> = Assets.getText(path).trim().split('\n');
 
 		for (i in 0...daList.length)
 		{
