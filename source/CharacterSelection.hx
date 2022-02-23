@@ -60,8 +60,6 @@ class CharacterSelection extends MusicBeatState
         menuBG.antialiasing = true;
         add(menuBG);
 
-        colors = new ColorData(nameColors[curSelected], true);
-
         nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
@@ -126,7 +124,7 @@ class CharacterSelection extends MusicBeatState
         add(txtOptionTitle);
 
         if(curSelected >= menuItems.length) curSelected = 0;
-        menuBG.color = colors[curSelected].color;
+        menuBG.color = nameColors[curSelected];
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
