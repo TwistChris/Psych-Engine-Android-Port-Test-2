@@ -23,6 +23,11 @@ class ColorData {
 	      return daList;
       }
 
+      public static function okk(nameColors:Array<String>)
+      {
+              CoolUtil.coolTextFile(Paths.txt('colors'));
+      }
+
       public function new(color:Int, colorfolder:Array<String>)
       {
               var colorfolder = CoolUtil.coolTextFile(Paths.txt('colors'));
