@@ -33,8 +33,9 @@ class CharacterSelection extends MusicBeatState
 	var shitCharacterBetter:Boyfriend;
     var icon:HealthIcon;
     var colo:FlxColor;
-    var colors:ColorData;
     var menuBG:FlxSprite;
+    var intendedColor:Int;
+    var colorTween:FlxTween;
     public var tagertY:Float = 0;
     var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
     public static var characterShit:Array<CharacterMenu>;
@@ -47,6 +48,7 @@ class CharacterSelection extends MusicBeatState
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
     private var coloArray:Array<FlxColor> = [];
+    var colors:Array<ColorData> = [];
     var names:Array<String> = [];
 
     var txtOptionTitle:FlxText;
@@ -60,7 +62,7 @@ class CharacterSelection extends MusicBeatState
         menuBG.antialiasing = true;
         add(menuBG);
 
-        var nameColos:Array<ColorData> = CoolUtil.coolTextFile(Paths.txt('colors'));
+        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
@@ -124,7 +126,8 @@ class CharacterSelection extends MusicBeatState
         add(txtOptionTitle);
 
         if(curSelected >= menuItems.length) curSelected = 0;
-        menuBG.color = nameColors[curSelected];
+        menuBG.color = colors[curSelected];
+        intendedColor = bg.color;
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
@@ -198,6 +201,19 @@ class CharacterSelection extends MusicBeatState
                 curSelected = menuItems.length - 1;
             if (curSelected >= menuItems.length)
                 curSelected = 0;
+            
+            var newColor:Int = colors[curSelected].color;
+	    if(newColor != intendedColor) {
+		    if(colorTween != null) {
+			    colorTween.cancel();
+		    }
+		    intendedColor = newColor;
+                    colorTween = FlxTween.color(bg, 1, bg.color, intendedColor, {
+	                    onComplete: function(twn:FlxTween) {
+			            colorTween = null;
+		            }
+		    });
+	    }
 
             var otherInt:Int = 0;
 
