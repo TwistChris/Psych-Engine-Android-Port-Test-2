@@ -28,12 +28,9 @@ class ColorData {
               CoolUtil.coolTextFile(Paths.txt('colors'));
       }
 
-      public function new(color:Int, colorfolder:Array<String>)
+      public function new(amogus:Array<String>)
       {
-              var colorfolder = CoolUtil.coolTextFile(Paths.txt('colors'));
-
 	      this.color = color;
               this.colorfolder = colorfolder;
-              if(this.colorfolder == null) this.colorfolder = [];
       }
 }
