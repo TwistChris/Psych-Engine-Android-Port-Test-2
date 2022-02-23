@@ -60,7 +60,7 @@ class CharacterSelection extends MusicBeatState
         menuBG.antialiasing = true;
         add(menuBG);
 
-        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
+        var nameColos:Array<ColorData> = CoolUtil.coolTextFile(Paths.txt('colors'));
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
