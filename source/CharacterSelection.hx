@@ -116,12 +116,6 @@ class CharacterSelection extends MusicBeatState
         charSelHeaderText.screenCenter(X);
         add(charSelHeaderText);
 
-        var arrows:FlxSprite = new FlxSprite().loadGraphic(Paths.image('arrows'));
-        arrows.setGraphicSize(Std.int(arrows.width * 1.1));
-        arrows.screenCenter();
-        arrows.antialiasing = true;
-        add(arrows);
-
         txtOptionTitle = new FlxText(FlxG.width * 0.7, 10, 0, "", 32);
         txtOptionTitle.setFormat("assets/fonts/pdark.ttf", 32, FlxColor.WHITE, RIGHT);
         txtOptionTitle.alpha = 0.7;
