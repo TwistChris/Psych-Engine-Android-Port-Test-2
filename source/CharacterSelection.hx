@@ -56,6 +56,8 @@ class CharacterSelection extends MusicBeatState
 
     override function create() 
     {
+        Paths.destroyLoadedImages();
+
         menuBG = new FlxSprite().loadGraphic(Paths.image('BG4'));
         menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
         menuBG.updateHitbox();
@@ -185,6 +187,9 @@ class CharacterSelection extends MusicBeatState
                 }
             
             if (controls.BACK)
+                if(colorTween != null) {
+			colorTween.cancel();
+		}
                 if (PlayState.isStoryMode)
                 {
                     FlxG.switchState(new MainMenuState());
