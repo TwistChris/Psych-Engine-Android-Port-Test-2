@@ -127,7 +127,7 @@ class CharacterSelection extends MusicBeatState
         add(txtOptionTitle);
 
         if(curSelected >= nameColors.length) curSelected = 0;
-        menuBG.color = colors[curSelected];
+        menuBG.color = colors[curSelected].color;
         intendedColor = menuBG.color;
         changeSelection();
 
