@@ -163,11 +163,13 @@ class CharacterSelection extends MusicBeatState
             if (upP)
                 {
                     changeSelection(-1);
+                    changeColors(-1);
                 }
 
             if (downP)
                 {
                     changeSelection(1);
+                    changeColors(1);
                 }
 
             if (accepted)
@@ -198,14 +200,9 @@ class CharacterSelection extends MusicBeatState
         super.update(elapsed);
     }
 
-    function changeSelection(change:Int = 0):Void
-        {
+    function changeColors(change:Int = 0):Void
+	{
             curSelected += change;
-
-            if (curSelected < 0)
-                curSelected = menuItems.length - 1;
-            if (curSelected >= menuItems.length)
-                curSelected = 0;
 
             if (curSelected < 0)
                 curSelected = nameColors.length - 1;
@@ -227,19 +224,23 @@ class CharacterSelection extends MusicBeatState
 
             var otherInt:Int = 0;
 
+    function changeSelection(change:Int = 0):Void
+        {
+            curSelected += change;
+
+            if (curSelected < 0)
+                curSelected = menuItems.length - 1;
+            if (curSelected >= menuItems.length)
+                curSelected = 0;
+
+            var otherInt:Int = 0;
+
             for (i in 0...iconArray.length)
                 {
                     iconArray[i].alpha = 1;
                 }
             
             iconArray[curSelected].alpha = 1;
-
-            for (i in 0...coloArray.length)
-                {
-                    coloArray[i].alpha = 1;
-                }
-            
-            coloArray[curSelected].alpha = 1;
 
             for (item in grpMenu.members)
                 {
