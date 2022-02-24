@@ -162,18 +162,23 @@ class CharacterSelection extends MusicBeatState
         {
             if (upP)
                 {
+                    FlxG.sound.play(Paths.sound('scrollMenu'));
                     changeSelection(-1);
+                    changeColors(-1);
                 }
 
             if (downP)
                 {
+                    FlxG.sound.play(Paths.sound('scrollMenu'));
                     changeSelection(1);
+                    changeColors(1);
                 }
 
             if (accepted)
                 {
                     alreadySelected = true;
                     var daSelected:String = menuItems[curSelected];
+                    FlxG.sound.play(Paths.sound('confirmMenu'));
                     PlayState.hasPlayedOnce = true;
                     if (menuItems[curSelected] != 'bf')
                         PlayState.SONG.player1 = daSelected;
