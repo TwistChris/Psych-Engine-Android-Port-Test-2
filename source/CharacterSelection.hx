@@ -221,6 +221,7 @@ class CharacterSelection extends MusicBeatState
 	    }
 
             var otherInt:Int = 0;
+    }
 
     function changeSelection(change:Int = 0):Void
         {
