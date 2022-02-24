@@ -160,6 +160,7 @@ class CharacterSelection extends MusicBeatState
                     alreadySelected = true;
                     var daSelected:String = menuItems[curSelected];
                     PlayState.hasPlayedOnce = true;
+                    if (menuItems[curSelected] != daSelected)    
                         PlayState.SONG.player1 = daSelected;
 
                     FlxFlicker.flicker(iconArray[curSelected], 0);
