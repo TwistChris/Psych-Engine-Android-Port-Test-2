@@ -26,7 +26,7 @@ typedef CharacterMenu = {
 
 class CharMenu extends MusicBeatState
 {
-    var menuItems:Array<String> = ['bf', 'bf-christmas', 'torch', 'bf-car'];
+    var menuItems:Array<String> = [];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
@@ -39,16 +39,13 @@ class CharMenu extends MusicBeatState
 
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
+    var nameIcons:Array<String> = [];
+    var nameColors:Array<String> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
 
-    var names:Array<String> = [
-        "Boyfriend",
-        "Boyfriend in Christmas Clothing",
-        "Torch the Dragon",
-        "Boyfriend on a Car"
-    ];
+    var names:Array<String> = [];
 
     var txtOptionTitle:FlxText;
 
