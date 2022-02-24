@@ -9,6 +9,7 @@ import flixel.group.FlxGroup;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+import flixel.tweens.FlxTween;
 import flixel.effects.FlxFlicker;
 import flixel.util.FlxTimer;
 import lime.utils.Assets;
@@ -125,7 +126,7 @@ class CharacterSelection extends MusicBeatState
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
-        if(curSelected >= menuItems.length) curSelected = 0;
+        if(curSelected >= nameColors.length) curSelected = 0;
         menuBG.color = colors[curSelected];
         intendedColor = bg.color;
         changeSelection();
@@ -200,6 +201,11 @@ class CharacterSelection extends MusicBeatState
             if (curSelected < 0)
                 curSelected = menuItems.length - 1;
             if (curSelected >= menuItems.length)
+                curSelected = 0;
+
+            if (curSelected < 0)
+                curSelected = nameColors.length - 1;
+            if (curSelected >= nameColors.length)
                 curSelected = 0;
             
             var newColor:Int = colors[curSelected].color;
