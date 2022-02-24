@@ -162,20 +162,20 @@ class CharacterSelection extends MusicBeatState
                     alreadySelected = true;
                     var daSelected:String = menuItems[curSelected];
                     PlayState.hasPlayedOnce = true;
-                    if (menuItems[curSelected] != 'bf')
+                    if (menuItems[curSelected])
                         PlayState.SONG.player1 = daSelected;
 
                     FlxFlicker.flicker(iconArray[curSelected], 0);
                     new FlxTimer().start(1, function(tmr:FlxTimer)
                         {
-                            LoadingState.loadAndSwitchState(new PlayState());
+                            LoadingState.loadAndSwitchState(new MainMenuState());
                         });
                 }
             
             if (controls.BACK)
                 if (PlayState.isStoryMode)
                 {
-                    FlxG.switchState(new FreeplayState());
+                    FlxG.switchState(new MainMenuState());
                 }
         }
 
@@ -221,6 +221,7 @@ class CharacterSelection extends MusicBeatState
             {
                 doesntExist = false;
                 var daSelected:String = menuItems[curSelected];
+                var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
 
                 //shitCharacter.updateHitbox();
