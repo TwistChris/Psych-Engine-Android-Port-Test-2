@@ -51,8 +51,6 @@ class CharacterSelection extends MusicBeatState
 
     override function create() 
     {
-        Paths.destroyLoadedImages();
-
         menuBG = new FlxSprite().loadGraphic(Paths.image('BG4'));
         menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
         menuBG.updateHitbox();
@@ -162,7 +160,6 @@ class CharacterSelection extends MusicBeatState
                     alreadySelected = true;
                     var daSelected:String = menuItems[curSelected];
                     PlayState.hasPlayedOnce = true;
-                    if (menuItems[curSelected])
                         PlayState.SONG.player1 = daSelected;
 
                     FlxFlicker.flicker(iconArray[curSelected], 0);
