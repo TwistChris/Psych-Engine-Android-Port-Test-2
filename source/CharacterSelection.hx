@@ -128,7 +128,7 @@ class CharacterSelection extends MusicBeatState
 
         if(curSelected >= nameColors.length) curSelected = 0;
         menuBG.color = colors[curSelected];
-        intendedColor = bg.color;
+        intendedColor = menuBG.color;
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
