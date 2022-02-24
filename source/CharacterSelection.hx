@@ -163,13 +163,11 @@ class CharacterSelection extends MusicBeatState
             if (upP)
                 {
                     changeSelection(-1);
-                    changeColors(-1);
                 }
 
             if (downP)
                 {
                     changeSelection(1);
-                    changeColors(1);
                 }
 
             if (accepted)
