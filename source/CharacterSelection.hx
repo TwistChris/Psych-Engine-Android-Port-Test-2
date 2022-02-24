@@ -214,7 +214,7 @@ class CharacterSelection extends MusicBeatState
 			    colorTween.cancel();
 		    }
 		    intendedColor = newColor;
-                    colorTween = FlxTween.color(bg, 1, bg.color, intendedColor, {
+                    colorTween = FlxTween.color(menuBG, 1, menuBG.color, intendedColor, {
 	                    onComplete: function(twn:FlxTween) {
 			            colorTween = null;
 		            }
