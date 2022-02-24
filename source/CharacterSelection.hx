@@ -54,12 +54,22 @@ class CharMenu extends MusicBeatState
 
     override function create() 
     {
+        Paths.destroyLoadedImages();
+
         menuBG = new FlxSprite().loadGraphic(Paths.image('BG4'));
         menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
         menuBG.updateHitbox();
         menuBG.screenCenter();
         menuBG.antialiasing = true;
         add(menuBG);
+
+        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
+
+        nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
+
+        names = CoolUtil.coolTextFile(Paths.txt('names'));
+        
+        menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
 
         grpMenu = new FlxTypedGroup<Alphabet>();
         add(grpMenu);
@@ -105,12 +115,6 @@ class CharMenu extends MusicBeatState
         charSelHeaderText.screenCenter(X);
         add(charSelHeaderText);
 
-        var arrows:FlxSprite = new FlxSprite().loadGraphic(Paths.image('arrows'));
-        arrows.setGraphicSize(Std.int(arrows.width * 1.1));
-        arrows.screenCenter();
-        arrows.antialiasing = true;
-        add(arrows);
-
         txtOptionTitle = new FlxText(FlxG.width * 0.7, 10, 0, "", 32);
         txtOptionTitle.setFormat("assets/fonts/pdark.ttf", 32, FlxColor.WHITE, RIGHT);
         txtOptionTitle.alpha = 0.7;
@@ -119,6 +123,10 @@ class CharMenu extends MusicBeatState
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+
+        #if mobileC
+        addVirtualPad(FULL, A_B);	
+        #end
 
         super.create();
     }
@@ -136,8 +144,8 @@ class CharMenu extends MusicBeatState
         if (iconArray[curSelected].animation.curAnim.name == 'idle' && iconArray[curSelected].animation.curAnim.finished && doesntExist)
             iconArray[curSelected].playAnim('idle', true);
 
-        var upP = controls.LEFT_P;
-        var downP = controls.RIGHT_P;
+        var upP = controls.UI_LEFT_P;
+        var downP = controls.UI_RIGHT_P;
         var accepted = controls.ACCEPT;
 
         if (!alreadySelected)
@@ -169,8 +177,7 @@ class CharMenu extends MusicBeatState
             
             if (controls.BACK)
                 if (PlayState.isStoryMode)
-                    FlxG.switchState(new StoryMenuState());
-                else {
+                {
                     FlxG.switchState(new FreeplayState());
                 }
         }
@@ -217,27 +224,7 @@ class CharMenu extends MusicBeatState
             {
                 doesntExist = false;
                 var daSelected:String = menuItems[curSelected];
-                var storedColor:FlxColor = 0xFFFFFF;
                 remove(icon);
-
-                switch (daSelected)
-                {
-                    case "bf":
-                        menuBG.loadGraphic('BG1');
-                        menuBG.color = 0x87ceeb;
-                    case "bf-christmas":
-                        menuBG.loadGraphic('BG2');
-                        menuBG.color = 0xFFFFFF;
-                    case "torch":
-                        menuBG.loadGraphic('BG3');
-				        menuBG.color = 0xFF00FF;
-                    case "bf-car":
-                        menuBG.loadGraphic('BG1');
-				        menuBG.color = 0xFF00FF;
-                    default:
-                        menuBG.loadGraphic('BG4');
-				        menuBG.color = 0xFFFFFF;
-                }
 
                 //shitCharacter.updateHitbox();
 		        //shitCharacter.screenCenter(XY);
