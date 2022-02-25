@@ -9,10 +9,12 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+import flixel.tweens.FlxTween;
 import flixel.effects.FlxFlicker;
 import flixel.util.FlxTimer;
 import lime.utils.Assets;
 import haxe.Json;
+import ColorData;
 import Boyfriend.Boyfriend;
 import Character.Character;
 import HealthIcon.HealthIcon;
@@ -33,7 +35,10 @@ class CharacterSelection extends MusicBeatState
 	var shitCharacterBetter:Boyfriend;
     var icon:HealthIcon;
     var menuBG:FlxSprite;
+    var intendedColor:Int;
+    var colorTween:FlxTween;
     public var tagertY:Float = 0;
+    var colors:Array<ColorData> = [];
     var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
     public static var characterShit:Array<CharacterMenu>;
 
@@ -115,6 +120,9 @@ class CharacterSelection extends MusicBeatState
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
+        if(curSelected >= nameColors.length) curSelected = 0;
+        menuBG.color = colors[curSelected].color;
+        intendedColor = menuBG.color;
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
@@ -148,11 +156,13 @@ class CharacterSelection extends MusicBeatState
             if (upP)
                 {
                     changeSelection(-1);
+                    changeColors(-1);
                 }
 
             if (downP)
                 {
                     changeSelection(1);
+                    changeColors(1);
                 }
 
             if (accepted)
@@ -171,13 +181,35 @@ class CharacterSelection extends MusicBeatState
                 }
             
             if (controls.BACK)
-                if (PlayState.isStoryMode)
-                {
-                    FlxG.switchState(new MainMenuState());
-                }
+                FlxG.switchState(new MainMenuState());
         }
 
         super.update(elapsed);
+    }
+
+    function changeColors(change:Int = 0):Void
+	{
+            curSelected += change;
+
+            if (curSelected < 0)
+                curSelected = nameColors.length - 1;
+            if (curSelected >= nameColors.length)
+                curSelected = 0;
+            
+            var newColor:Int = colors[curSelected].color;
+	    if(newColor != intendedColor) {
+		    if(colorTween != null) {
+			    colorTween.cancel();
+		    }
+		    intendedColor = newColor;
+                    colorTween = FlxTween.color(menuBG, 1, menuBG.color, intendedColor, {
+	                    onComplete: function(twn:FlxTween) {
+			            colorTween = null;
+		            }
+		    });
+	    }
+
+            var otherInt:Int = 0;
     }
 
     function changeSelection(change:Int = 0):Void
