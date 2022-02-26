@@ -6,7 +6,7 @@ import openfl.utils.Assets as OpenFlAssets;
 using StringTools;
 
 class ColorData {
-      public var color:Int = -7179779;
+      public var color:Int = 0xFFFFFFFF;
 
       public function new(color:Int)
       {
