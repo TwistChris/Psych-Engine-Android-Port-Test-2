@@ -57,9 +57,8 @@ class CharacterSelection extends MusicBeatState
         menuBG.updateHitbox();
         menuBG.screenCenter();
         menuBG.antialiasing = true;
+        menuBG.color = 0xFFFFFFFF;
         add(menuBG);
-
-        var storedColor:FlxColor = 0xFFFFFF;
 
         nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
