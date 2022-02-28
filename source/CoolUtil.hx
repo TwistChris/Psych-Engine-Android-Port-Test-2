@@ -44,6 +44,19 @@ class CoolUtil
 
 		return daList;
 	}
+
+        public static function coolIntFile(path:String):Array<Int>
+	{
+		var daList:Array<String> = [];
+		if(Assets.exists(path)) daList = Assets.getText(path).trim().split('\n');
+
+		for (i in 0...daList.length)
+		{
+			daList[i] = daList[i].trim();
+		}
+
+		return daList;
+	}
         //get the most used color in an image
 	public static function dominantColor(sprite:FlxSprite):Int{
 		var countByColor:Map<Int, Int> = [];
