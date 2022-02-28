@@ -60,7 +60,9 @@ class CharacterSelection extends MusicBeatState
         menuBG.color = 0xFFFFFFFF;
         add(menuBG);
 
-        var namColors = CoolUtil.coolIntFile(Paths.txt('colors'));
+        var intColors:Int = nameColors[curSelected];
+
+        nameColors = CoolUtil.coolIntFile(Paths.txt('colors'));
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
@@ -118,7 +120,7 @@ class CharacterSelection extends MusicBeatState
         add(txtOptionTitle);
 
         if(curSelected >= menuItems.length) curSelected = 0;
-        menuBG.color = namColors[curSelected];
+        menuBG.color = intColors;
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
