@@ -45,7 +45,7 @@ class CoolUtil
 		return daList;
 	}
 
-        public static function coolIntFile(path:String):Array<Int>
+        public static function coolIntFile(path:String)
 	{
 		var daList:Array<String> = [];
 		if(Assets.exists(path)) daList = Assets.getText(path).trim().split('\n');
