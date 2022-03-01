@@ -10,17 +10,25 @@ import openfl.utils.Assets;
 
 using StringTools;
 
+typedef ColorFile =
+{
+      var nameColors:Array<String> = [];
+}
+
 class ColorData {
       public var namesColors:Array<String> = [];
       public var color:Int = -7179779;
 
-      public static function coolColorFile(namesColors:ColorData)
-      {
-		namesColors = CoolUtil.coolTextFile(Paths.txt('colors'));
+      public static function createWeekFile():WeekFile {
+              var colorFile:ColorFile = {
+                      nameColors = ColorData.coolColorFile(Paths.txt('colors'))
+              };
+              return colorFile;
       }
 
-      public function new(color:Int)
+      public function new(color:Int, weekFile:WeekFile)
       {
 	      this.color = color;
+              colorFile.nameColors = nameColors;
       }
 }
