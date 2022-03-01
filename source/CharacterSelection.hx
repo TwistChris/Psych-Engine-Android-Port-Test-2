@@ -57,7 +57,6 @@ class CharacterSelection extends MusicBeatState
         menuBG.updateHitbox();
         menuBG.screenCenter();
         menuBG.antialiasing = true;
-        menuBG.color = 0xFFFFFFFF;
         add(menuBG);
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
@@ -115,8 +114,6 @@ class CharacterSelection extends MusicBeatState
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
-        if(curSelected >= menuItems.length) curSelected = 0;
-        menuBG.color = nameColors[curSelected].nameColors.color;
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
@@ -189,6 +186,8 @@ class CharacterSelection extends MusicBeatState
                 curSelected = 0;
 
             var otherInt:Int = 0;
+
+            menuBG.loadGraphic('image/BG' + (curSelected + 1) + '.png');
 
             for (i in 0...iconArray.length)
                 {
