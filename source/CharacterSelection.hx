@@ -60,7 +60,7 @@ class CharacterSelection extends MusicBeatState
         menuBG.color = 0xFFFFFFFF;
         add(menuBG);
 
-        nameColors = ColorData.coolColorFile(Paths.txt('colors'));
+        nameColors = ColorData.coolColorFile
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
