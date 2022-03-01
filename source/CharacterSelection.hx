@@ -17,7 +17,6 @@ import Boyfriend.Boyfriend;
 import Character.Character;
 import HealthIcon.HealthIcon;
 import flixel.ui.FlxBar;
-import ColorData;
 
 typedef CharacterMenu = {
     var name:String;
