@@ -181,7 +181,7 @@ class CharacterSelection extends MusicBeatState
             if (curSelected < 0)
                 curSelected = menuItems.length - 1;
             if (curSelected >= menuItems.length)
-                curSelected = 0
+                curSelected = 0;
 
             var otherInt:Int = 0;
             
