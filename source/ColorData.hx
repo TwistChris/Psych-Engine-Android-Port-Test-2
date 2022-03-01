@@ -21,7 +21,7 @@ class ColorData {
 
       public static function createWeekFile():WeekFile {
               var colorFile:ColorFile = {
-                      nameColors = ColorData.coolColorFile(Paths.txt('colors'))
+                      nameColors = ColorData.coolColorFile(Paths.txt('colors'));
               };
               return colorFile;
       }
