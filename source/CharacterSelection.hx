@@ -185,7 +185,7 @@ class CharacterSelection extends MusicBeatState
 
             var otherInt:Int = 0;
 
-            menuBG.frames = Paths.getSparroAtlas('BG' + (curSelected + 1));
+            menuBG.loadGraphic('assets/images/BG' + (curSelected + 1) + '.png');
 
             for (i in 0...iconArray.length)
                 {
