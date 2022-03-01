@@ -182,10 +182,10 @@ class CharacterSelection extends MusicBeatState
                 curSelected = menuItems.length - 1;
             if (curSelected >= menuItems.length)
                 curSelected = 0
-            
-            menuBG.loadGraphic('assets/images/BG' + (curSelected + 1) + '.png');
 
             var otherInt:Int = 0;
+            
+            menuBG.loadGraphic('assets/images/BG' + (curSelected + 1) + '.png');
 
             for (i in 0...iconArray.length)
                 {
