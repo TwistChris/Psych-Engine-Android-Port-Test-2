@@ -184,6 +184,11 @@ class Paths
 		return FlxAtlasFrames.fromSparrow(image(key, library), file('images/$key.xml', library));
 	}
 
+        inline static public function getSparroAtlas(key:String, ?library:String)
+	{
+		return FlxAtlasFrames.fromSparrow(image(key, library), file('images/$key.png', library));
+	}
+
 	inline static public function getSparrowAtlaslua(key:String, ?library:String)
 	{
 		return FlxAtlasFrames.fromSparrow(image(key, library), file(Main.path + 'images/$key.xml', library));
