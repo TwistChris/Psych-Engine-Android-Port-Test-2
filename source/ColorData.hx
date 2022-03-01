@@ -16,7 +16,7 @@ typedef ColorFile =
 }
 
 class ColorData {
-      public var namesColors:Array<String> = [];
+      public var nameColors:Array<String> = [];
       public var color:Int = -7179779;
 
       public static function createColorFile():ColorFile {
