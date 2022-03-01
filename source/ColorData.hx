@@ -19,14 +19,14 @@ class ColorData {
       public var namesColors:Array<String> = [];
       public var color:Int = -7179779;
 
-      public static function createWeekFile():WeekFile {
+      public static function createColorFile():ColorFile {
               var colorFile:ColorFile = {
                       nameColors = ColorData.coolColorFile(Paths.txt('colors'));
               };
               return colorFile;
       }
 
-      public function new(color:Int, weekFile:WeekFile)
+      public function new(color:Int, colorFile:ColorFile)
       {
 	      this.color = color;
               colorFile.nameColors = nameColors;
