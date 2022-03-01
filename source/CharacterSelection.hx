@@ -13,11 +13,11 @@ import flixel.effects.FlxFlicker;
 import flixel.util.FlxTimer;
 import lime.utils.Assets;
 import haxe.Json;
-import ColorData.ColorData;
 import Boyfriend.Boyfriend;
 import Character.Character;
 import HealthIcon.HealthIcon;
 import flixel.ui.FlxBar;
+import ColorData;
 
 typedef CharacterMenu = {
     var name:String;
@@ -41,7 +41,7 @@ class CharacterSelection extends MusicBeatState
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var nameIcons:Array<String> = [];
-    var nameColors:Array<ColorData> = [];
+    var nameColors:Array<String> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
@@ -60,7 +60,7 @@ class CharacterSelection extends MusicBeatState
         menuBG.color = 0xFFFFFFFF;
         add(menuBG);
 
-        nameColors = ColorData.coolColorFile();
+        nameColors = CoolUtil.coolTextFile(Paths.txt('colors'));
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
@@ -118,7 +118,7 @@ class CharacterSelection extends MusicBeatState
         add(txtOptionTitle);
 
         if(curSelected >= menuItems.length) curSelected = 0;
-        menuBG.color = nameColors[curSelected].color;
+        menuBG.color = nameColors[curSelected].nameColors.color;
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
