@@ -11,7 +11,7 @@ import openfl.utils.Assets;
 using StringTools;
 
 class ColorData {
-      public var namesColors:Array<String> = []
+      public var namesColors:Array<String> = [];
       public var color:Int = -7179779;
 
       public static function coolColorFile(namesColors:ColorData)
