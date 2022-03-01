@@ -41,7 +41,6 @@ class CharacterSelection extends MusicBeatState
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var nameIcons:Array<String> = [];
-    var nameColors:Array<ColorData> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
@@ -187,7 +186,7 @@ class CharacterSelection extends MusicBeatState
 
             var otherInt:Int = 0;
 
-            menuBG.loadGraphic('image/BG' + (curSelected + 1) + '.png');
+            menuBG.frames = Paths.getSparroAtlas('images/BG' + (curSelected + 1));
 
             for (i in 0...iconArray.length)
                 {
