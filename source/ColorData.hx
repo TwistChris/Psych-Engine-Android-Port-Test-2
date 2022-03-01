@@ -10,7 +10,7 @@ import openfl.utils.Assets;
 
 using StringTools;
 
-public static function coolColorFile(path:String):Array<String>
+public static function coolColorFile(path:String)
 	{
 		var daList:Array<String> = [];
 		if(Assets.exists(path)) daList = Assets.getText(path).trim().split('\n');
