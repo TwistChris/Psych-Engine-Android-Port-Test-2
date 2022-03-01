@@ -12,7 +12,7 @@ using StringTools;
 
 typedef ColorFile =
 {
-      var nameColors:Array<String> = [];
+      var nameColors:Array<String>;
 }
 
 class ColorData {
