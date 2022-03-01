@@ -13,7 +13,7 @@ import flixel.effects.FlxFlicker;
 import flixel.util.FlxTimer;
 import lime.utils.Assets;
 import haxe.Json;
-import ColorData;
+import ColorData.ColorData;
 import Boyfriend.Boyfriend;
 import Character.Character;
 import HealthIcon.HealthIcon;
@@ -41,7 +41,7 @@ class CharacterSelection extends MusicBeatState
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
     var nameIcons:Array<String> = [];
-    var nameColors:Array<String> = [];
+    var nameColors:Array<ColorData> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
