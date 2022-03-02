@@ -112,6 +112,8 @@ class CharacterSelection extends MusicBeatState
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
+        if(curSelected >= menuItems.length) curSelected = 0;
+        menuBG.frames = Paths.getSparroAtlas('BG' + (curSelected + 1));
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
@@ -182,8 +184,6 @@ class CharacterSelection extends MusicBeatState
                 curSelected = menuItems.length - 1;
             if (curSelected >= menuItems.length)
                 curSelected = 0;
-
-            menuBG.frames = Paths.getSparrowAtlas('BG' + (curSelected + 1));
 
             var otherInt:Int = 0;
 
