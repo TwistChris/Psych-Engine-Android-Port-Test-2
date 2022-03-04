@@ -50,7 +50,7 @@ class CharacterSelection extends MusicBeatState
 
     override function create() 
     {
-        menuBG = new FlxSprite().loadGraphic('assets/images/BG1.png');
+        menuBG = new FlxSprite().loadGraphic(Paths.image('BG1'));
         menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
         menuBG.updateHitbox();
         menuBG.screenCenter();
@@ -113,7 +113,7 @@ class CharacterSelection extends MusicBeatState
         add(txtOptionTitle);
 
         if(curSelected >= menuItems.length) curSelected = 0;
-        menuBG.loadGraphic('assets/images/BG' + (curSelected + 1) + '.png');
+        menuBG.loadGraphic(Paths.image('BG' + (curSelected + 1));
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
