@@ -113,7 +113,7 @@ class CharacterSelection extends MusicBeatState
         add(txtOptionTitle);
 
         if(curSelected >= menuItems.length) curSelected = 0;
-        menuBG.loadGraphic(Paths.image('BG' + (curSelected + 1));
+        menuBG.loadGraphic(Paths.image('BG' + (curSelected + 1)));
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
