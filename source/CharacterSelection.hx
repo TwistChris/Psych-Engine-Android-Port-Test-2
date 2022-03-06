@@ -33,7 +33,6 @@ class CharacterSelection extends MusicBeatState
 	var shitCharacterBetter:Boyfriend;
     var icon:HealthIcon;
     var menuBG:FlxSprite;
-    var menuBG2:FlxSprite;
     public var tagertY:Float = 0;
     var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
     public static var characterShit:Array<CharacterMenu>;
@@ -57,8 +56,6 @@ class CharacterSelection extends MusicBeatState
         menuBG.screenCenter();
         menuBG.antialiasing = true;
         add(menuBG);
-
-        menuBG2 = new FlxSprite(0, 0).loadGraphic(Paths.image('BG1'));
 
         nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
 
@@ -115,7 +112,6 @@ class CharacterSelection extends MusicBeatState
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
-        add(menuBG2);
         changeSelection(0);
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
@@ -187,7 +183,7 @@ class CharacterSelection extends MusicBeatState
             if (curSelected >= menuItems.length)
                 curSelected = 0;
 
-            menuBG2.loadGraphic(Paths.image('BG'+(curSelected + 1)));
+            menuBG.loadGraphic(Paths.image('BG'+(curSelected + 1)));
 
             var otherInt:Int = 0;
             
