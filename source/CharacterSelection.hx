@@ -187,10 +187,10 @@ class CharacterSelection extends MusicBeatState
             if (curSelected >= menuItems.length)
                 curSelected = 0;
 
-            var otherInt:Int = 0;
-    
-            menuBG2 = new FlxSprite(0, 0).loadGraphic(Paths.image('BG' + (curSelected + 1)));
+            menuBG2.loadGraphic(Paths.image('BG'+(curSelected + 1)));
 
+            var otherInt:Int = 0;
+            
             for (i in 0...iconArray.length)
                 {
                     iconArray[i].alpha = 1;
