@@ -128,7 +128,7 @@ class PlayState extends MusicBeatState
 
         public static var hasPlayedOnce:Bool = false;
 
-        public static var bfsel:Bool = false;
+        public static var bfsel:String = '';
 
         var bfcansing:Bool = true;
 	var dadcansing:Bool = true;
@@ -762,7 +762,7 @@ class PlayState extends MusicBeatState
 			gf.visible = false;
 		}
 
-                if(bfsel) {
+                ifbfsel {
                         boyfriend = new Boyfriend(0, 0, bfsel);
 		        startCharacterPos(boyfriend);
 		        boyfriendGroup.add(boyfriend);
