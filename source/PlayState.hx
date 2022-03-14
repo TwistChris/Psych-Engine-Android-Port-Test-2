@@ -762,8 +762,8 @@ class PlayState extends MusicBeatState
 			gf.visible = false;
 		}
 
-                ifbfsel {
-                        boyfriend = new Boyfriend(0, 0, bfsel);
+                if bfsel{
+                        boyfriend = new Boyfriend(0, 0, SONG.player2);
 		        startCharacterPos(boyfriend);
 		        boyfriendGroup.add(boyfriend);
                 }
