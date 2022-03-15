@@ -749,10 +749,6 @@ class PlayState extends MusicBeatState
 				dadGroup.add(dad2);
 			}
 
-                boyfriend = new Boyfriend(0, 0, SONG.player1);
-		startCharacterPos(boyfriend);
-		boyfriendGroup.add(boyfriend);
-
                 switch (bfsel)
                 {
                         case bfsel:
