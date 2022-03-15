@@ -22,13 +22,13 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	var lePlayState:PlayState;
 
-	public static var characterName:String = 'bf';
+	public static var characterName:String = bfchange();
 	public static var deathSoundName:String = 'fnf_loss_sfx';
 	public static var loopSoundName:String = 'gameOver';
 	public static var endSoundName:String = 'gameOverEnd';
 
 	public static function resetVariables() {
-		characterName = 'bf';
+		characterName = bfchange();
 		deathSoundName = 'fnf_loss_sfx';
 		loopSoundName = 'gameOver';
 		endSoundName = 'gameOverEnd';
@@ -55,6 +55,21 @@ class GameOverSubstate extends MusicBeatSubstate
 		FlxG.camera.target = null;
 
 		bf.playAnim('firstDeath');
+
+                function bfchange(){
+		switch PlayState.bfsel{
+			case 'bf':
+				return 'bf';
+			case 'beta':
+				return 'blue';
+			case 'blue':
+				return 'beta';
+                        case 'mean':
+				return 'mean';
+			default:
+				return 'bf';
+		              }
+	        }
 
 		var exclude:Array<Int> = [];
 
