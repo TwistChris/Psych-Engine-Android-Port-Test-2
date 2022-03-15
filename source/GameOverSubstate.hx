@@ -67,21 +67,6 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		bf.playAnim('firstDeath');
 
-                function bfchange(){
-		switch PlayState.bfsel{
-			case 'bf':
-				return 'bf';
-			case 'beta':
-				return 'blue';
-			case 'blue':
-				return 'beta';
-                        case 'mean':
-				return 'mean';
-			default:
-				return 'bf';
-		              }
-	        }
-
 		var exclude:Array<Int> = [];
 
 		camFollowPos = new FlxObject(0, 0, 1, 1);
