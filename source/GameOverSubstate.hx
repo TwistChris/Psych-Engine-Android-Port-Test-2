@@ -22,13 +22,13 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	var lePlayState:PlayState;
 
-	public static var characterName:String = bfchange();
+	public static var characterName:String = 'bf';
 	public static var deathSoundName:String = 'fnf_loss_sfx';
 	public static var loopSoundName:String = 'gameOver';
 	public static var endSoundName:String = 'gameOverEnd';
 
 	public static function resetVariables() {
-		characterName = bfchange();
+		characterName = 'bf';
 		deathSoundName = 'fnf_loss_sfx';
 		loopSoundName = 'gameOver';
 		endSoundName = 'gameOverEnd';
@@ -42,7 +42,18 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		Conductor.songPosition = 0;
 
-		bf = new Boyfriend(x, y, characterName);
+                switch PlayState.bfsel{
+                       case 'bf':
+                               bf = new Boyfriend(x, y, 'bf');
+                       case 'beta':
+                               bf = new Boyfriend(x, y, 'beta');
+                       case 'blue':
+                               bf = new Boyfriend(x, y, 'blue');
+                       case 'mean':
+                               bf = new Boyfriend(x, y, 'mean');
+                       default:
+                               bf = new Boyfriend(x, y, characterName);
+                }
 		add(bf);
 
 		camFollow = new FlxPoint(bf.getGraphicMidpoint().x, bf.getGraphicMidpoint().y);
