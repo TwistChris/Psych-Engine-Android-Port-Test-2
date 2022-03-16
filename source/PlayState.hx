@@ -763,6 +763,7 @@ class PlayState extends MusicBeatState
                 }
 
                 if(bfsel == 'bf') {
+                        SONG.player1 = bfsel;
                         switch (curStage)
 			{
 				case 'limo':
