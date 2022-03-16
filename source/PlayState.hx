@@ -756,7 +756,7 @@ class PlayState extends MusicBeatState
 		                startCharacterPos(boyfriend);
 		                boyfriendGroup.add(boyfriend);
 
-                        case bf:
+                        case 'bf':
                                 boyfriend = new Boyfriend(0, 0, 'bf');
 		                startCharacterPos(boyfriend);
 		                boyfriendGroup.add(boyfriend);
