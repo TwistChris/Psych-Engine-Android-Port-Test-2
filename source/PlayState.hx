@@ -767,6 +767,10 @@ class PlayState extends MusicBeatState
 		                boyfriendGroup.add(boyfriend);
                 }
 
+                if(bfsel == 'bf') {
+                        bfsel = SONG.player1;
+                }
+
 		var camPos:FlxPoint = new FlxPoint(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 		camPos.x += gf.cameraPosition[0];
 		camPos.y += gf.cameraPosition[1];
