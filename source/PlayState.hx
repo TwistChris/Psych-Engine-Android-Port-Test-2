@@ -756,11 +756,6 @@ class PlayState extends MusicBeatState
 		                startCharacterPos(boyfriend);
 		                boyfriendGroup.add(boyfriend);
 
-                        case 'bf':
-                                boyfriend = new Boyfriend(0, 0, 'bf');
-		                startCharacterPos(boyfriend);
-		                boyfriendGroup.add(boyfriend);
-
                         default:
                                 boyfriend = new Boyfriend(0, 0, SONG.player1);
 		                startCharacterPos(boyfriend);
@@ -768,7 +763,7 @@ class PlayState extends MusicBeatState
                 }
 
                 if(bfsel == 'bf') {
-                        bfsel = SONG.player1;
+                        'bf' = defauft;
                 }
 
 		var camPos:FlxPoint = new FlxPoint(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
