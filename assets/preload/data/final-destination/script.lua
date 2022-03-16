@@ -9,6 +9,7 @@ local ofs = 35;
 local followchars = true;
 local del = 0;
 local del2 = 0;
+local del3 = 0;
 
 
 function onUpdate()
@@ -17,6 +18,9 @@ function onUpdate()
 	end
 	if del2 > 0 then
 		del2 = del2 - 1
+	end
+        if del3 > 0 then
+		del3 = del3 - 1
 	end
     if followchars == true then
         if mustHitSection == false then
