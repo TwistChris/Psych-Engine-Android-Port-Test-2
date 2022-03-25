@@ -90,8 +90,7 @@ function onUpdate()
                 triggerEvent('Camera Follow Pos',xx3,yy3)
             end
         end
-    end
-else
+    else
     triggerEvent('Camera Follow Pos','','')
 end
     
