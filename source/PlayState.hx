@@ -755,33 +755,16 @@ class PlayState extends MusicBeatState
                                 boyfriend = new Boyfriend(0, 0, bfsel);
 		                startCharacterPos(boyfriend);
 		                boyfriendGroup.add(boyfriend);
+                   
+                        case 'bf':
+                                boyfriend = new Boyfriend(0, 0, SONG.player1);
+		                startCharacterPos(boyfriend);
+		                boyfriendGroup.add(boyfriend);
 
                         default:
                                 boyfriend = new Boyfriend(0, 0, SONG.player1);
 		                startCharacterPos(boyfriend);
 		                boyfriendGroup.add(boyfriend);
-                }
-
-                if(bfsel == 'bf') {
-                        switch (curStage)
-			{
-				case 'limo':
-			                bfsel = 'bf-car';
-				case 'mall' | 'mallEvil':
-					bfsel = 'bf-christmas';
-				case 'school' | 'schoolEvil':
-					bfsel = 'bf-pixel';
-				default:
-					bfsel = 'bf';
-                        }
-
-                        switch (songName)
-			{
-				case 'stress':
-			                bfsel = 'bf-holding-gf';
-                                default:
-					bfsel = 'bf';
-                       }
                 }
 
 		var camPos:FlxPoint = new FlxPoint(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
